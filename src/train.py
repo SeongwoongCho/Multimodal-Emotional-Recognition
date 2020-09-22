@@ -139,7 +139,7 @@ if config.mode == 'speech' or 'face':
             pred=pred.detach().max(1)[1]
             speech_label = speech_label.detach().max(1)[1]
             valid_acc+=pred.eq(speech_label.view_as(pred)).sum().item()
-        valid_acc/=len(valid_list)
+        valid_acc/=len(valid_loader)
 
         torch.save(model.module.state_dict(),os.path.join(save_path,'%d_best_%.4f.pth'%(epoch,valid_loss)))
         print("Epoch [%d]/[%d] train_loss: %.6f valid_loss: %.6f valid_acc:%.6f"%(
