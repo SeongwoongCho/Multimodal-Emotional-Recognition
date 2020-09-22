@@ -1,2 +1,1 @@
-True
 Loaded pretrained weights for efficientnet-b0

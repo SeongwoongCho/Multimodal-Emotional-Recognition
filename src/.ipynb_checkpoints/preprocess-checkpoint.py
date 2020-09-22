@@ -109,7 +109,7 @@ def preprocess_audio(wav,config):
                                             n_fft=config.N_FFT, hop_length=config.HOP_LENGTH,fmax=config.FREQ_RANGE[1],fmin=config.FREQ_RANGE[0]))
     
     yS = librosa.util.normalize(mel_spec) ## 각 time step마다 max(abs) 로 normalize (즉 무조건 [-1,1] 범위에 온다.)
-    yS = (1+yS)/2
+    yS = (1+yS)/2 #[0,1]
     
     return yS,index
 

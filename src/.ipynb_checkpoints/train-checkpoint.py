@@ -5,9 +5,10 @@ from torch.optim import AdamW,SGD
 from torch.utils import data
 
 from utils.utils import *
+from utils.warmup_scheduler import GradualWarmupScheduler
 from models.model_speech import get_speech_model
 from models.model_face import get_face_model
-from dataloader.dataset import SpeechDataset,get_speech_collater
+from dataloader.dataset import Dataset
 seed_everything(42)
 
 import numpy as np
@@ -27,7 +28,7 @@ class Config(Serializable):
         ## training mode
         self.mode = 'speech'
         self.exp_name = 'baseline'
-        assert self.mode in ['speech','face','multi']
+        assert self.mode in ['speech','multimodal']
         
         ## training parameters
         self.learning_rate = 4e-3
@@ -36,6 +37,7 @@ class Config(Serializable):
         self.optim = 'adamw'
         self.weight_decay = 1e-5
         self.num_workers = 16
+        self.warmup = 1
         
         ## model parameters
         self.load_weights = None
@@ -59,7 +61,6 @@ if config.amp:
 save_path = './logs/{}/{}'.format(config.mode,config.exp_name)
 os.makedirs(save_path,exist_ok=True)
 saved_status = config.export_json(path=os.path.join(save_path,'saved_status.json'))
-print(saved_status)
 
 train_speech_root_dir = '../features/train/speech'
 train_face_root_dir = '../features/train/video_embedding'
@@ -72,14 +73,14 @@ valid_speech_files = [file for file in os.listdir(valid_speech_root_dir) if '.np
 valid_face_files = [file for file in os.listdir(valid_face_root_dir) if '.npy' in file]
 
 if config.mode == 'speech':
-    train_dataset = SpeechDataset(root_dir = train_speech_root_dir,file_list = train_speech_files,label_smoothing = config.label_smoothing,is_train=True)
-    valid_dataset = SpeechDataset(root_dir = valid_speech_root_dir,file_list = valid_speech_files,label_smoothing = 0,is_train=False)
-    train_loader=data.DataLoader(dataset=train_dataset,batch_size=config.batch_size,num_workers=config.num_workers,shuffle=True,collate_fn = get_speech_collater(is_train = True))
-    valid_loader=data.DataLoader(dataset=valid_dataset,batch_size=config.batch_size,num_workers=config.num_workers,shuffle=False, collate_fn = get_speech_collater(is_train = False))
+    train_dataset = Dataset(speech_root_dir = train_speech_root_dir, video_root_dir = train_face_root_dir,file_list = train_speech_files,label_smoothing = config.label_smoothing,is_train=True)
+    valid_dataset = Dataset(speech_root_dir = valid_speech_root_dir, video_root_dir = valid_face_root_dir,file_list = valid_speech_files,label_smoothing = 0,is_train=False)
+    train_loader=data.DataLoader(dataset=train_dataset,batch_size=config.batch_size,num_workers=config.num_workers,shuffle=True)
+    valid_loader=data.DataLoader(dataset=valid_dataset,batch_size=config.batch_size,num_workers=config.num_workers,shuffle=False)
 else:
     raise NotImplemented
 
-if config.mode == 'speech' or config.mode == 'face':
+if config.mode == 'speech':
     model = get_speech_model(coeff = config.coeff, weights = config.load_weights)
     model.cuda()
     
@@ -87,6 +88,8 @@ if config.mode == 'speech' or config.mode == 'face':
         model= nn.DataParallel(model)
     if config.optim == 'adamw':
         optimizer = AdamW(model.parameters(),lr=config.learning_rate,weight_decay = config.weight_decay)
+    elif config.optim == 'sgd':
+        optimizer = SGD(model.parameters(),lr=config.learning_rate,weight_decay = config.weight_decay, momentum = 0.9, nesterov = True)
 
 elif config.mode == 'multi':
     raise NotImplemented
@@ -95,16 +98,21 @@ if config.amp:
     model, optimizer = amp.initialize(model, optimizer, opt_level="O1")
     model= nn.DataParallel(model)
 scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer,T_max = config.n_epoch*len(train_loader))
+if config.warmup:
+    scheduler = GradualWarmupScheduler(optimizer, multiplier = 1, total_epoch = config.warmup*len(train_loader), after_scheduler = scheduler)
+    
 criterion = cross_entropy()
 
-if config.mode == 'speech' or 'face':
+if config.mode == 'speech':
     best_acc=np.inf
-    iter = 0
+    step = 0
     for epoch in range(config.n_epoch):
         train_loss=0
         optimizer.zero_grad()
         model.train()
-        for idx,data in enumerate(tqdm(train_loader)):
+        
+        progress_bar = tqdm(train_loader)
+        for idx,data in enumerate(progress_bar):
             speech = data['speech'].cuda()
             speech_label = data['speech_label'].cuda()
             if np.random.uniform(0,1) < config.mixup_prob:
@@ -123,9 +131,11 @@ if config.mode == 'speech' or 'face':
             optimizer.zero_grad()
             
             train_loss+=loss.item()/len(train_loader)
-            scheduler.step(iter)
-            iter +=1
-
+            scheduler.step(step)
+            step +=1
+            progress_bar.set_description(
+                'Step: {}. LR : {}. Epoch: {}/{}. Iteration: {}/{}. current loss: {:.5f}'.format(step, optimizer.param_groups[0]['lr'], epoch, config.n_epoch, idx + 1, len(train_loader), loss.item()))
+        
         valid_loss=0
         valid_acc=0
         model.eval()
@@ -138,9 +148,9 @@ if config.mode == 'speech' or 'face':
             valid_loss+=loss.item()/len(valid_loader)
             pred=pred.detach().max(1)[1]
             speech_label = speech_label.detach().max(1)[1]
-            valid_acc+=pred.eq(speech_label.view_as(pred)).sum().item()
-        valid_acc/=len(valid_loader)
+            acc = pred.eq(speech_label.view_as(pred)).sum().item() / len(pred)
+            valid_acc+=acc/len(valid_loader)
 
         torch.save(model.module.state_dict(),os.path.join(save_path,'%d_best_%.4f.pth'%(epoch,valid_loss)))
         print("Epoch [%d]/[%d] train_loss: %.6f valid_loss: %.6f valid_acc:%.6f"%(
-        epoch,n_epoch,train_loss,valid_loss,valid_acc))
+        epoch,config.n_epoch,train_loss,valid_loss,valid_acc))

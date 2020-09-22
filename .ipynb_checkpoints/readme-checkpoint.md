@@ -21,7 +21,9 @@
 ```
 
 # Resources
-- RTX6000 * 2 supported by NIPA
+- RTX6000 * 2
+- RAM 128G
+- supported by NIPA
 
 # WORK FLOW
 1. Preprocess -> CropFace from video, get normalized log-mel spectrogram from trimmed Speech
@@ -32,13 +34,13 @@
     
 3. something considerable
     - augmentation : mixup, (speech)specaug, 
-    - attentioned-pooling : multi-modal case의 경우 aligned pooling을 수행..!
+    - attentioned-pooling : multi-modal case의 경우 aligned pooling을 수행..! attention-encoder-decoder 모델을 활용
     - multitask-learning vs transfer-learning
-        
+
 # CMD
 1. python3 preprocess.py        
-2. python train.py --mode speech --exp_name baseline --learning_rate 4e-3 --batch_size 256 --n_epoch 100 --optim adamw --weight_decay 1e-5 --num_workers 16 --coeff 0 --mixup_prob 1 --mixup_alpha 1 --label_smoothing 0.1 --amp False >> logs.txt
-3. python3 train.py --mode multimodal --pretrained_speech --pretrained_face --freeze_head
+2. python train.py --mode speech --exp_name baseline --learning_rate 4e-3 --batch_size 256 --n_epoch 100 --optim adamw --warmup 1 --weight_decay 1e-5 --num_workers 16 --coeff 0 --mixup_prob 1 --mixup_alpha 1 --label_smoothing 0.1 --amp False >> logs.txt
+3. python3 train.py --mode multimodal --pretrained_speech --pretrained_face --freeze_head True
 
 ## requirements
 
