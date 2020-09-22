@@ -6,7 +6,7 @@ import os
 import numpy as np
 import scipy
 
-from facenet_pytorch import MTCNN
+from facenet_pytorch import MTCNN, InceptionResnetV1
 from tqdm import tqdm
 
 class CONFIG():
@@ -38,10 +38,11 @@ class FastMTCNN(object):
             *args: Arguments to pass to the MTCNN constructor. See help(MTCNN).
             **kwargs: Keyword arguments to pass to the MTCNN constructor. See help(MTCNN).
         """
+        self.config = CONFIG()
         self.stride = stride
         self.resize = resize
         self.mtcnn = MTCNN(*args, **kwargs)
-        
+#        self.mtcnn = torch.nn.DataParallel(self.mtcnn)
     def __call__(self, frames):
         """Detect faces in frames using strided MTCNN."""
         if self.resize != 1:
@@ -49,14 +50,17 @@ class FastMTCNN(object):
                 cv2.resize(f, (int(f.shape[1] * self.resize), int(f.shape[0] * self.resize)))
                     for f in frames
             ]
-                      
+        
+        if len(frames[::self.stride]) == 0:
+            return []
         boxes, probs = self.mtcnn.detect(frames[::self.stride])
 
         faces = []
         for i, frame in enumerate(frames):
             box_ind = int(i / self.stride)
             if boxes[box_ind] is None:
-                faces.append(frame)
+                faces.append(np.zeros((self.config.FACE_RESIZE,self.config.FACE_RESIZE,3)))
+                continue
             for box in boxes[box_ind]:
                 box = [int(b) for b in box]
                 faces.append(frame[box[1]:box[3], box[0]:box[2]])
@@ -110,9 +114,18 @@ def preprocess_audio(wav,config):
     return yS,index
 
 def preprocess_video(video_list,config):
-    faces = fast_mtcnn(video_list)
+    if len(video_list) < 350:
+        faces_tmp = fast_mtcnn(video_list)
+    else:
+        faces_tmp = fast_mtcnn(video_list[:350]) + fast_mtcnn(video_list[350:])
     
-    faces = [cv2.resize(face, (config.FACE_RESIZE, config.FACE_RESIZE)) for face in faces]
+    faces = []
+    for face in faces_tmp:
+        try:
+            faces.append(cv2.resize(face, (config.FACE_RESIZE, config.FACE_RESIZE)))
+        except:
+            pass
+    
     faces = np.array(faces).swapaxes(1,3).swapaxes(2,3) ## T,size,size,3
     return faces
 
@@ -129,7 +142,6 @@ def preprocess(file,config):
 
     video_list = [videoclip.get_frame(start_time + (end_time-start_time)*i/n_frame) for i in range(n_frame)]
     video_preprocessed = preprocess_video(video_list,config)
-    
     return log_mel_spec, video_preprocessed
 
 def process(config):
@@ -138,13 +150,32 @@ def process(config):
     
     files = [ file for file in os.listdir(config.FILE_DIR) if file.endswith('.mp4')]
     for file in tqdm(files):
-        try:
-            speech_feature, video_feature = preprocess(file,config)
-            np.save(os.path.join(config.SAVE_DIR + 'speech/', file[:-4]+'.npy'),speech_feature)
-            np.save(os.path.join(config.SAVE_DIR + 'video/', file[:-4]+'.npy'),video_feature)
-        except Exception as e:
-            print(e)
+        if os.path.exists(os.path.join(config.SAVE_DIR + 'speech/', file[:-4]+'.npy')) and os.path.exists(os.path.join(config.SAVE_DIR + 'speech/', file[:-4]+'.npy')):
+            continue
+        else:
+            try:
+                speech_feature, video_feature = preprocess(file,config)
+                np.save(os.path.join(config.SAVE_DIR + 'speech/', file[:-4]+'.npy'),speech_feature)
+                np.save(os.path.join(config.SAVE_DIR + 'video/', file[:-4]+'.npy'),video_feature)
+            except Exception as e:
+                print(e)
 
+def process_feature_embedding(config):
+    os.makedirs(config.SAVE_DIR + 'video_embedding/',exist_ok = True)
+    
+    embedding_net = InceptionResnetV1(pretrained='vggface2')
+    embedding_net = torch.nn.DataParallel(embedding_net)
+    embedding_net.cuda()
+    embedding_net.eval()
+    files = [file for file in os.listdir(config.SAVE_DIR + 'video/') if file.endswith('.npy')]
+    
+    for file in tqdm(files):
+        inp = torch.Tensor(np.load(config.SAVE_DIR + 'video/' + file)).cuda()
+        with torch.no_grad():
+            out = embedding_net(inp)
+        out = out.cpu().detach().numpy()
+        np.save(config.SAVE_DIR + 'video_embedding/' + file, out)
+        
 if __name__ == '__main__':
     print("..processing train data")
     process(train_config)
@@ -154,3 +185,12 @@ if __name__ == '__main__':
 
     print("..processing test data")
     process(test_config)
+
+    print(".. feature processing train data")
+    process_feature_embedding(train_config)
+
+    print(".. feature processing valid data")
+    process_feature_embedding(val_config)
+
+    print(".. feature processing test data")
+    process_feature_embedding(test_config)
