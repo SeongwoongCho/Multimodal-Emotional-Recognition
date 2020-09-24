@@ -1,1 +1,703 @@
 Loaded pretrained weights for efficientnet-b0
+Epoch [0]/[100] train_loss: 1.917551 valid_loss: 1.964230 valid_acc:0.123047
+Epoch [1]/[100] train_loss: 1.899341 valid_loss: 1.905009 valid_acc:0.195703
+Epoch [2]/[100] train_loss: 1.896494 valid_loss: 1.925974 valid_acc:0.188743
+Epoch [3]/[100] train_loss: 1.886287 valid_loss: 2.053211 valid_acc:0.189205
+Epoch [4]/[100] train_loss: 1.869929 valid_loss: 1.905951 valid_acc:0.253054
+Epoch [5]/[100] train_loss: 1.868008 valid_loss: 1.849235 valid_acc:0.240163
+Epoch [6]/[100] train_loss: 1.860495 valid_loss: 1.913068 valid_acc:0.238175
+Epoch [7]/[100] train_loss: 1.855468 valid_loss: 1.773199 valid_acc:0.321378
+Epoch [8]/[100] train_loss: 1.852337 valid_loss: 1.811282 valid_acc:0.275462
+Epoch [9]/[100] train_loss: 1.849203 valid_loss: 1.757268 valid_acc:0.309020
+Epoch [10]/[100] train_loss: 1.847654 valid_loss: 1.919005 valid_acc:0.228018
+Epoch [11]/[100] train_loss: 1.843443 valid_loss: 1.788974 valid_acc:0.290909
+Epoch [12]/[100] train_loss: 1.839144 valid_loss: 1.743478 valid_acc:0.317791
+Epoch [13]/[100] train_loss: 1.838386 valid_loss: 1.733159 valid_acc:0.320312
+Epoch [14]/[100] train_loss: 1.840782 valid_loss: 1.779134 valid_acc:0.304155
+Epoch [15]/[100] train_loss: 1.832274 valid_loss: 1.762227 valid_acc:0.315767
+Epoch [16]/[100] train_loss: 1.830014 valid_loss: 1.817890 valid_acc:0.279972
+Epoch [17]/[100] train_loss: 1.831199 valid_loss: 1.786907 valid_acc:0.283168
+Epoch [18]/[100] train_loss: 1.832778 valid_loss: 1.729179 valid_acc:0.328018
+Epoch [19]/[100] train_loss: 1.823400 valid_loss: 1.963519 valid_acc:0.241016
+Epoch [20]/[100] train_loss: 1.822130 valid_loss: 1.772653 valid_acc:0.305824
+Epoch [21]/[100] train_loss: 1.823107 valid_loss: 1.843758 valid_acc:0.273615
+Epoch [22]/[100] train_loss: 1.820277 valid_loss: 1.707395 valid_acc:0.333097
+Epoch [23]/[100] train_loss: 1.817569 valid_loss: 1.707755 valid_acc:0.335937
+Epoch [24]/[100] train_loss: 1.810162 valid_loss: 1.668196 valid_acc:0.363991
+Epoch [25]/[100] train_loss: 1.810032 valid_loss: 1.781329 valid_acc:0.297017
+Epoch [26]/[100] train_loss: 1.814142 valid_loss: 1.709911 valid_acc:0.341193
+Epoch [27]/[100] train_loss: 1.809681 valid_loss: 1.660907 valid_acc:0.366939
+Epoch [28]/[100] train_loss: 1.812330 valid_loss: 1.825749 valid_acc:0.289205
+Epoch [29]/[100] train_loss: 1.811198 valid_loss: 1.688221 valid_acc:0.361861
+Epoch [30]/[100] train_loss: 1.803957 valid_loss: 1.707355 valid_acc:0.335476
+Epoch [31]/[100] train_loss: 1.803280 valid_loss: 1.736853 valid_acc:0.327024
+Epoch [32]/[100] train_loss: 1.797848 valid_loss: 1.725300 valid_acc:0.317294
+Epoch [33]/[100] train_loss: 1.799006 valid_loss: 1.634965 valid_acc:0.390909
+Epoch [34]/[100] train_loss: 1.795671 valid_loss: 1.674290 valid_acc:0.361683
+Epoch [35]/[100] train_loss: 1.795106 valid_loss: 1.670190 valid_acc:0.353480
+Epoch [36]/[100] train_loss: 1.796279 valid_loss: 1.638578 valid_acc:0.380930
+Epoch [37]/[100] train_loss: 1.789478 valid_loss: 1.624705 valid_acc:0.397124
+Epoch [38]/[100] train_loss: 1.789113 valid_loss: 1.669253 valid_acc:0.356428
+Epoch [39]/[100] train_loss: 1.791120 valid_loss: 1.675848 valid_acc:0.365945
+Epoch [40]/[100] train_loss: 1.789690 valid_loss: 1.677262 valid_acc:0.362322
+Epoch [41]/[100] train_loss: 1.785830 valid_loss: 1.669721 valid_acc:0.356428
+Epoch [42]/[100] train_loss: 1.790707 valid_loss: 1.694665 valid_acc:0.345170
+Epoch [43]/[100] train_loss: 1.782108 valid_loss: 1.629720 valid_acc:0.382919
+Epoch [44]/[100] train_loss: 1.781346 valid_loss: 1.643411 valid_acc:0.377770
+Epoch [45]/[100] train_loss: 1.778612 valid_loss: 1.607512 valid_acc:0.398331
+Epoch [46]/[100] train_loss: 1.773899 valid_loss: 1.647204 valid_acc:0.381499
+Epoch [47]/[100] train_loss: 1.774373 valid_loss: 1.630743 valid_acc:0.383274
+Epoch [48]/[100] train_loss: 1.769820 valid_loss: 1.637819 valid_acc:0.371200
+Epoch [49]/[100] train_loss: 1.774175 valid_loss: 1.642456 valid_acc:0.361719
+Epoch [50]/[100] train_loss: 1.772436 valid_loss: 1.607866 valid_acc:0.394886
+Epoch [51]/[100] train_loss: 1.766845 valid_loss: 1.640020 valid_acc:0.372976
+Epoch [52]/[100] train_loss: 1.774959 valid_loss: 1.585821 valid_acc:0.399858
+Epoch [53]/[100] train_loss: 1.765692 valid_loss: 1.634826 valid_acc:0.376953
+Epoch [54]/[100] train_loss: 1.764046 valid_loss: 1.586099 valid_acc:0.405717
+Epoch [55]/[100] train_loss: 1.763043 valid_loss: 1.609950 valid_acc:0.406286
+Epoch [56]/[100] train_loss: 1.758041 valid_loss: 1.614230 valid_acc:0.389311
+Epoch [57]/[100] train_loss: 1.749605 valid_loss: 1.596368 valid_acc:0.396200
+Epoch [58]/[100] train_loss: 1.754610 valid_loss: 1.600788 valid_acc:0.405575
+Epoch [59]/[100] train_loss: 1.749979 valid_loss: 1.594137 valid_acc:0.393821
+Epoch [60]/[100] train_loss: 1.751100 valid_loss: 1.580173 valid_acc:0.407493
+Epoch [61]/[100] train_loss: 1.748937 valid_loss: 1.579093 valid_acc:0.399929
+Epoch [62]/[100] train_loss: 1.744741 valid_loss: 1.599433 valid_acc:0.398970
+Epoch [63]/[100] train_loss: 1.745494 valid_loss: 1.566176 valid_acc:0.412003
+Epoch [64]/[100] train_loss: 1.747430 valid_loss: 1.594405 valid_acc:0.394602
+Epoch [65]/[100] train_loss: 1.732290 valid_loss: 1.572695 valid_acc:0.407138
+Epoch [66]/[100] train_loss: 1.742819 valid_loss: 1.584834 valid_acc:0.402344
+Epoch [67]/[100] train_loss: 1.740847 valid_loss: 1.584713 valid_acc:0.401101
+Epoch [68]/[100] train_loss: 1.735526 valid_loss: 1.593686 valid_acc:0.397372
+Epoch [69]/[100] train_loss: 1.739400 valid_loss: 1.578460 valid_acc:0.409624
+Epoch [70]/[100] train_loss: 1.733810 valid_loss: 1.577810 valid_acc:0.393963
+Epoch [71]/[100] train_loss: 1.735415 valid_loss: 1.560519 valid_acc:0.409446
+Epoch [72]/[100] train_loss: 1.719188 valid_loss: 1.573427 valid_acc:0.400639
+Epoch [73]/[100] train_loss: 1.727473 valid_loss: 1.562693 valid_acc:0.414524
+Epoch [74]/[100] train_loss: 1.726112 valid_loss: 1.570279 valid_acc:0.403232
+Epoch [75]/[100] train_loss: 1.718214 valid_loss: 1.558599 valid_acc:0.415945
+Epoch [76]/[100] train_loss: 1.728959 valid_loss: 1.558622 valid_acc:0.412820
+Epoch [77]/[100] train_loss: 1.725574 valid_loss: 1.558042 valid_acc:0.420845
+Epoch [78]/[100] train_loss: 1.715170 valid_loss: 1.559779 valid_acc:0.416797
+Epoch [79]/[100] train_loss: 1.715948 valid_loss: 1.564015 valid_acc:0.410440
+Epoch [80]/[100] train_loss: 1.714509 valid_loss: 1.561108 valid_acc:0.414418
+Epoch [81]/[100] train_loss: 1.721309 valid_loss: 1.568345 valid_acc:0.406428
+Epoch [82]/[100] train_loss: 1.726589 valid_loss: 1.558352 valid_acc:0.412997
+Epoch [83]/[100] train_loss: 1.722983 valid_loss: 1.554624 valid_acc:0.409162
+Epoch [84]/[100] train_loss: 1.714542 valid_loss: 1.559903 valid_acc:0.409091
+Epoch [85]/[100] train_loss: 1.709260 valid_loss: 1.558169 valid_acc:0.409162
+Epoch [86]/[100] train_loss: 1.718617 valid_loss: 1.563446 valid_acc:0.412749
+Epoch [87]/[100] train_loss: 1.711237 valid_loss: 1.568522 valid_acc:0.399929
+Epoch [88]/[100] train_loss: 1.692009 valid_loss: 1.555150 valid_acc:0.412287
+Epoch [89]/[100] train_loss: 1.719861 valid_loss: 1.560116 valid_acc:0.412464
+Epoch [90]/[100] train_loss: 1.703528 valid_loss: 1.555527 valid_acc:0.410227
+Epoch [91]/[100] train_loss: 1.707955 valid_loss: 1.558176 valid_acc:0.413352
+Epoch [92]/[100] train_loss: 1.710708 valid_loss: 1.559480 valid_acc:0.407919
+Epoch [93]/[100] train_loss: 1.710411 valid_loss: 1.560440 valid_acc:0.406143
+Epoch [94]/[100] train_loss: 1.710382 valid_loss: 1.559997 valid_acc:0.407209
+Epoch [95]/[100] train_loss: 1.706175 valid_loss: 1.560339 valid_acc:0.412997
+Epoch [96]/[100] train_loss: 1.696344 valid_loss: 1.556958 valid_acc:0.410582
+Epoch [97]/[100] train_loss: 1.695169 valid_loss: 1.557333 valid_acc:0.408274
+Epoch [98]/[100] train_loss: 1.703818 valid_loss: 1.558946 valid_acc:0.407209
+Epoch [99]/[100] train_loss: 1.700896 valid_loss: 1.559567 valid_acc:0.408274
+Loaded pretrained weights for efficientnet-b4
+Loaded pretrained weights for efficientnet-b0
+Epoch [0]/[300] train_loss: 1.917551 valid_loss: 1.964230 valid_acc:0.123047
+Epoch [1]/[300] train_loss: 1.899341 valid_loss: 1.905009 valid_acc:0.195703
+Epoch [2]/[300] train_loss: 1.896494 valid_loss: 1.925974 valid_acc:0.188743
+Epoch [3]/[300] train_loss: 1.886296 valid_loss: 2.050032 valid_acc:0.189205
+Epoch [4]/[300] train_loss: 1.870197 valid_loss: 1.849462 valid_acc:0.286257
+Epoch [5]/[300] train_loss: 1.867505 valid_loss: 1.802367 valid_acc:0.273295
+Epoch [6]/[300] train_loss: 1.860371 valid_loss: 1.780806 valid_acc:0.319531
+Epoch [7]/[300] train_loss: 1.856166 valid_loss: 1.718529 valid_acc:0.336186
+Epoch [8]/[300] train_loss: 1.852293 valid_loss: 1.972348 valid_acc:0.238601
+Epoch [9]/[300] train_loss: 1.848662 valid_loss: 1.733814 valid_acc:0.327131
+Epoch [10]/[300] train_loss: 1.847554 valid_loss: 1.865458 valid_acc:0.268430
+Epoch [11]/[300] train_loss: 1.844121 valid_loss: 1.851794 valid_acc:0.299183
+Epoch [12]/[300] train_loss: 1.841825 valid_loss: 1.760018 valid_acc:0.303161
+Epoch [13]/[300] train_loss: 1.837083 valid_loss: 1.712399 valid_acc:0.344389
+Epoch [14]/[300] train_loss: 1.840808 valid_loss: 1.761173 valid_acc:0.318928
+Epoch [15]/[300] train_loss: 1.831638 valid_loss: 1.711212 valid_acc:0.334943
+Epoch [16]/[300] train_loss: 1.833212 valid_loss: 1.759080 valid_acc:0.312678
+Epoch [17]/[300] train_loss: 1.834848 valid_loss: 1.754436 valid_acc:0.318004
+Epoch [18]/[300] train_loss: 1.831153 valid_loss: 1.726189 valid_acc:0.328942
+Epoch [19]/[300] train_loss: 1.826761 valid_loss: 1.868209 valid_acc:0.251740
+Epoch [20]/[300] train_loss: 1.823335 valid_loss: 1.733254 valid_acc:0.320881
+Epoch [21]/[300] train_loss: 1.823287 valid_loss: 1.767692 valid_acc:0.311861
+Epoch [22]/[300] train_loss: 1.819818 valid_loss: 1.716026 valid_acc:0.328551
+Epoch [23]/[300] train_loss: 1.819007 valid_loss: 1.743231 valid_acc:0.317756
+Epoch [24]/[300] train_loss: 1.815191 valid_loss: 1.669403 valid_acc:0.357955
+Epoch [25]/[300] train_loss: 1.815963 valid_loss: 1.720900 valid_acc:0.326491
+Epoch [26]/[300] train_loss: 1.817138 valid_loss: 1.699879 valid_acc:0.354226
+Epoch [27]/[300] train_loss: 1.814293 valid_loss: 1.738373 valid_acc:0.324574
+Epoch [28]/[300] train_loss: 1.814386 valid_loss: 1.773250 valid_acc:0.290270
+Epoch [29]/[300] train_loss: 1.813458 valid_loss: 1.687069 valid_acc:0.342756
+Epoch [30]/[300] train_loss: 1.807491 valid_loss: 1.677139 valid_acc:0.350107
+Epoch [31]/[300] train_loss: 1.807375 valid_loss: 1.671714 valid_acc:0.347976
+Epoch [32]/[300] train_loss: 1.802580 valid_loss: 1.704324 valid_acc:0.329972
+Epoch [33]/[300] train_loss: 1.806346 valid_loss: 1.743904 valid_acc:0.315696
+Epoch [34]/[300] train_loss: 1.802057 valid_loss: 1.787764 valid_acc:0.301669
+Epoch [35]/[300] train_loss: 1.802707 valid_loss: 1.696237 valid_acc:0.360334
+Epoch [36]/[300] train_loss: 1.804717 valid_loss: 1.667187 valid_acc:0.369389
+Epoch [37]/[300] train_loss: 1.796413 valid_loss: 1.641312 valid_acc:0.366087
+Epoch [38]/[300] train_loss: 1.794722 valid_loss: 1.631418 valid_acc:0.392330
+Epoch [39]/[300] train_loss: 1.796204 valid_loss: 1.642938 valid_acc:0.361399
+Epoch [40]/[300] train_loss: 1.801280 valid_loss: 1.676220 valid_acc:0.358842
+Epoch [41]/[300] train_loss: 1.795400 valid_loss: 1.686400 valid_acc:0.361257
+Epoch [42]/[300] train_loss: 1.798762 valid_loss: 1.695061 valid_acc:0.347834
+Epoch [43]/[300] train_loss: 1.788859 valid_loss: 1.627846 valid_acc:0.379190
+Epoch [44]/[300] train_loss: 1.795136 valid_loss: 1.643199 valid_acc:0.366371
+Epoch [45]/[300] train_loss: 1.791216 valid_loss: 1.647765 valid_acc:0.362464
+Epoch [46]/[300] train_loss: 1.785996 valid_loss: 1.666926 valid_acc:0.368075
+Epoch [47]/[300] train_loss: 1.786828 valid_loss: 1.635070 valid_acc:0.383203
+Epoch [48]/[300] train_loss: 1.782450 valid_loss: 1.674141 valid_acc:0.354759
+Epoch [49]/[300] train_loss: 1.787001 valid_loss: 1.680668 valid_acc:0.355007
+Epoch [50]/[300] train_loss: 1.787586 valid_loss: 1.679509 valid_acc:0.354830
+Epoch [51]/[300] train_loss: 1.779947 valid_loss: 1.619520 valid_acc:0.386435
+Epoch [52]/[300] train_loss: 1.788299 valid_loss: 1.620305 valid_acc:0.389276
+Epoch [53]/[300] train_loss: 1.781878 valid_loss: 1.714321 valid_acc:0.330504
+Epoch [54]/[300] train_loss: 1.782266 valid_loss: 1.657242 valid_acc:0.359979
+Epoch [55]/[300] train_loss: 1.780408 valid_loss: 1.664170 valid_acc:0.365412
+Epoch [56]/[300] train_loss: 1.778825 valid_loss: 1.708090 valid_acc:0.307812
+Epoch [57]/[300] train_loss: 1.774004 valid_loss: 1.611874 valid_acc:0.389808
+Epoch [58]/[300] train_loss: 1.773482 valid_loss: 1.660016 valid_acc:0.364524
+Epoch [59]/[300] train_loss: 1.771821 valid_loss: 1.615431 valid_acc:0.389205
+Epoch [60]/[300] train_loss: 1.771949 valid_loss: 1.604530 valid_acc:0.388849
+Epoch [61]/[300] train_loss: 1.769348 valid_loss: 1.628886 valid_acc:0.384055
+Epoch [62]/[300] train_loss: 1.769831 valid_loss: 1.719019 valid_acc:0.332741
+Epoch [63]/[300] train_loss: 1.770900 valid_loss: 1.630573 valid_acc:0.379261
+Epoch [64]/[300] train_loss: 1.772175 valid_loss: 1.652708 valid_acc:0.358026
+Epoch [65]/[300] train_loss: 1.761839 valid_loss: 1.639941 valid_acc:0.373224
+Epoch [66]/[300] train_loss: 1.768690 valid_loss: 1.648119 valid_acc:0.362891
+Epoch [67]/[300] train_loss: 1.768958 valid_loss: 1.635011 valid_acc:0.368395
+Epoch [68]/[300] train_loss: 1.762070 valid_loss: 1.640027 valid_acc:0.377947
+Epoch [69]/[300] train_loss: 1.767503 valid_loss: 1.606198 valid_acc:0.385547
+Epoch [70]/[300] train_loss: 1.763733 valid_loss: 1.629789 valid_acc:0.370526
+Epoch [71]/[300] train_loss: 1.764764 valid_loss: 1.627666 valid_acc:0.367401
+Epoch [72]/[300] train_loss: 1.752526 valid_loss: 1.674830 valid_acc:0.371626
+Epoch [73]/[300] train_loss: 1.763005 valid_loss: 1.610904 valid_acc:0.396413
+Epoch [74]/[300] train_loss: 1.756351 valid_loss: 1.605652 valid_acc:0.389915
+Epoch [75]/[300] train_loss: 1.748886 valid_loss: 1.586032 valid_acc:0.401918
+Epoch [76]/[300] train_loss: 1.761358 valid_loss: 1.617141 valid_acc:0.391335
+Epoch [77]/[300] train_loss: 1.757798 valid_loss: 1.606942 valid_acc:0.408665
+Epoch [78]/[300] train_loss: 1.749578 valid_loss: 1.597662 valid_acc:0.394780
+Epoch [79]/[300] train_loss: 1.752664 valid_loss: 1.594522 valid_acc:0.392472
+Epoch [80]/[300] train_loss: 1.750231 valid_loss: 1.607949 valid_acc:0.387180
+Epoch [81]/[300] train_loss: 1.753156 valid_loss: 1.602407 valid_acc:0.395490
+Epoch [82]/[300] train_loss: 1.761908 valid_loss: 1.593756 valid_acc:0.393786
+Epoch [83]/[300] train_loss: 1.754410 valid_loss: 1.592925 valid_acc:0.405646
+Epoch [84]/[300] train_loss: 1.751213 valid_loss: 1.651154 valid_acc:0.361577
+Epoch [85]/[300] train_loss: 1.746721 valid_loss: 1.597949 valid_acc:0.404155
+Epoch [86]/[300] train_loss: 1.753454 valid_loss: 1.606451 valid_acc:0.387607
+Epoch [87]/[300] train_loss: 1.747010 valid_loss: 1.656165 valid_acc:0.364418
+Epoch [88]/[300] train_loss: 1.733574 valid_loss: 1.598221 valid_acc:0.404048
+Epoch [89]/[300] train_loss: 1.751654 valid_loss: 1.615620 valid_acc:0.379048
+Epoch [90]/[300] train_loss: 1.736793 valid_loss: 1.596151 valid_acc:0.383203
+Epoch [91]/[300] train_loss: 1.741755 valid_loss: 1.581253 valid_acc:0.400994
+Epoch [92]/[300] train_loss: 1.745481 valid_loss: 1.625391 valid_acc:0.378445
+Epoch [93]/[300] train_loss: 1.742267 valid_loss: 1.578769 valid_acc:0.402060
+Epoch [94]/[300] train_loss: 1.740878 valid_loss: 1.594216 valid_acc:0.396200
+Epoch [95]/[300] train_loss: 1.735661 valid_loss: 1.654248 valid_acc:0.377415
+Epoch [96]/[300] train_loss: 1.733254 valid_loss: 1.604874 valid_acc:0.394354
+Epoch [97]/[300] train_loss: 1.729448 valid_loss: 1.591833 valid_acc:0.401349
+Epoch [98]/[300] train_loss: 1.734503 valid_loss: 1.613718 valid_acc:0.387251
+Epoch [99]/[300] train_loss: 1.730245 valid_loss: 1.580279 valid_acc:0.404474
+Epoch [100]/[300] train_loss: 1.724194 valid_loss: 1.582985 valid_acc:0.397159
+Epoch [101]/[300] train_loss: 1.738099 valid_loss: 1.586343 valid_acc:0.401456
+Epoch [102]/[300] train_loss: 1.714055 valid_loss: 1.601187 valid_acc:0.386612
+Epoch [103]/[300] train_loss: 1.729365 valid_loss: 1.578552 valid_acc:0.411151
+Epoch [104]/[300] train_loss: 1.715035 valid_loss: 1.634704 valid_acc:0.371804
+Epoch [105]/[300] train_loss: 1.723215 valid_loss: 1.580738 valid_acc:0.410866
+Epoch [106]/[300] train_loss: 1.722195 valid_loss: 1.585987 valid_acc:0.410440
+Epoch [107]/[300] train_loss: 1.716868 valid_loss: 1.652747 valid_acc:0.354261
+Epoch [108]/[300] train_loss: 1.727778 valid_loss: 1.606834 valid_acc:0.385973
+Epoch [109]/[300] train_loss: 1.717948 valid_loss: 1.607455 valid_acc:0.394070
+Epoch [110]/[300] train_loss: 1.717389 valid_loss: 1.625106 valid_acc:0.368288
+Epoch [111]/[300] train_loss: 1.716228 valid_loss: 1.616705 valid_acc:0.375675
+Epoch [112]/[300] train_loss: 1.712699 valid_loss: 1.588402 valid_acc:0.400994
+Epoch [113]/[300] train_loss: 1.720173 valid_loss: 1.610889 valid_acc:0.386186
+Epoch [114]/[300] train_loss: 1.716721 valid_loss: 1.586045 valid_acc:0.408097
+Epoch [115]/[300] train_loss: 1.717368 valid_loss: 1.593203 valid_acc:0.406357
+Epoch [116]/[300] train_loss: 1.707986 valid_loss: 1.628828 valid_acc:0.376669
+Epoch [117]/[300] train_loss: 1.714094 valid_loss: 1.648154 valid_acc:0.374822
+Epoch [118]/[300] train_loss: 1.709042 valid_loss: 1.613977 valid_acc:0.381996
+Epoch [119]/[300] train_loss: 1.708458 valid_loss: 1.588546 valid_acc:0.394673
+Epoch [120]/[300] train_loss: 1.714313 valid_loss: 1.589110 valid_acc:0.407138
+Epoch [121]/[300] train_loss: 1.701243 valid_loss: 1.594973 valid_acc:0.398509
+Epoch [122]/[300] train_loss: 1.720221 valid_loss: 1.601948 valid_acc:0.395774
+Epoch [123]/[300] train_loss: 1.719101 valid_loss: 1.590830 valid_acc:0.407955
+Epoch [124]/[300] train_loss: 1.697777 valid_loss: 1.594293 valid_acc:0.394354
+Epoch [125]/[300] train_loss: 1.703831 valid_loss: 1.588552 valid_acc:0.393537
+Epoch [126]/[300] train_loss: 1.687201 valid_loss: 1.566017 valid_acc:0.414702
+Epoch [127]/[300] train_loss: 1.702930 valid_loss: 1.572667 valid_acc:0.408913
+Epoch [128]/[300] train_loss: 1.694106 valid_loss: 1.652793 valid_acc:0.376136
+Epoch [129]/[300] train_loss: 1.708182 valid_loss: 1.599565 valid_acc:0.388210
+Epoch [130]/[300] train_loss: 1.696538 valid_loss: 1.606799 valid_acc:0.389347
+Epoch [131]/[300] train_loss: 1.683435 valid_loss: 1.579575 valid_acc:0.405149
+Epoch [132]/[300] train_loss: 1.683615 valid_loss: 1.554891 valid_acc:0.415376
+Epoch [133]/[300] train_loss: 1.683321 valid_loss: 1.633659 valid_acc:0.369105
+Epoch [134]/[300] train_loss: 1.690985 valid_loss: 1.599410 valid_acc:0.395135
+Epoch [135]/[300] train_loss: 1.685410 valid_loss: 1.614104 valid_acc:0.389808
+Epoch [136]/[300] train_loss: 1.690075 valid_loss: 1.599191 valid_acc:0.382067
+Epoch [137]/[300] train_loss: 1.700693 valid_loss: 1.575446 valid_acc:0.406960
+Epoch [138]/[300] train_loss: 1.686269 valid_loss: 1.624237 valid_acc:0.379723
+Epoch [139]/[300] train_loss: 1.702285 valid_loss: 1.595188 valid_acc:0.396662
+Epoch [140]/[300] train_loss: 1.677220 valid_loss: 1.606660 valid_acc:0.392685
+Epoch [141]/[300] train_loss: 1.674748 valid_loss: 1.569975 valid_acc:0.411293
+Epoch [142]/[300] train_loss: 1.692387 valid_loss: 1.575480 valid_acc:0.406712
+Epoch [143]/[300] train_loss: 1.679609 valid_loss: 1.646290 valid_acc:0.370703
+Epoch [144]/[300] train_loss: 1.679337 valid_loss: 1.598073 valid_acc:0.412855
+Epoch [145]/[300] train_loss: 1.677940 valid_loss: 1.611604 valid_acc:0.383132
+Epoch [146]/[300] train_loss: 1.676676 valid_loss: 1.585148 valid_acc:0.411754
+Epoch [147]/[300] train_loss: 1.669471 valid_loss: 1.591730 valid_acc:0.398970
+Epoch [148]/[300] train_loss: 1.666161 valid_loss: 1.588106 valid_acc:0.399787
+Epoch [149]/[300] train_loss: 1.674441 valid_loss: 1.628597 valid_acc:0.388139
+Epoch [150]/[300] train_loss: 1.673153 valid_loss: 1.605214 valid_acc:0.392862
+Epoch [151]/[300] train_loss: 1.661350 valid_loss: 1.598021 valid_acc:0.389169
+Epoch [152]/[300] train_loss: 1.658647 valid_loss: 1.587481 valid_acc:0.403835
+Epoch [153]/[300] train_loss: 1.673461 valid_loss: 1.598239 valid_acc:0.393359
+Epoch [154]/[300] train_loss: 1.666603 valid_loss: 1.610651 valid_acc:0.395241
+Epoch [155]/[300] train_loss: 1.669104 valid_loss: 1.603907 valid_acc:0.391584
+Epoch [156]/[300] train_loss: 1.654549 valid_loss: 1.591902 valid_acc:0.386683
+Epoch [157]/[300] train_loss: 1.676655 valid_loss: 1.621914 valid_acc:0.392223
+Epoch [158]/[300] train_loss: 1.680673 valid_loss: 1.639329 valid_acc:0.368679
+Epoch [159]/[300] train_loss: 1.675281 valid_loss: 1.600187 valid_acc:0.390518
+Epoch [160]/[300] train_loss: 1.667487 valid_loss: 1.587274 valid_acc:0.403409
+Epoch [161]/[300] train_loss: 1.649469 valid_loss: 1.590094 valid_acc:0.399964
+Epoch [162]/[300] train_loss: 1.657291 valid_loss: 1.605421 valid_acc:0.385085
+Epoch [163]/[300] train_loss: 1.655168 valid_loss: 1.590715 valid_acc:0.403338
+Epoch [164]/[300] train_loss: 1.655245 valid_loss: 1.618034 valid_acc:0.390447
+Epoch [165]/[300] train_loss: 1.657198 valid_loss: 1.605415 valid_acc:0.398224
+Epoch [166]/[300] train_loss: 1.642726 valid_loss: 1.598699 valid_acc:0.397195
+Epoch [167]/[300] train_loss: 1.656514 valid_loss: 1.626781 valid_acc:0.374432
+Epoch [168]/[300] train_loss: 1.651556 valid_loss: 1.589438 valid_acc:0.407670
+Epoch [169]/[300] train_loss: 1.650239 valid_loss: 1.604786 valid_acc:0.400320
+Epoch [170]/[300] train_loss: 1.652104 valid_loss: 1.628302 valid_acc:0.380220
+Epoch [171]/[300] train_loss: 1.647688 valid_loss: 1.626208 valid_acc:0.372230
+Epoch [172]/[300] train_loss: 1.655741 valid_loss: 1.591057 valid_acc:0.397976
+Epoch [173]/[300] train_loss: 1.637474 valid_loss: 1.609491 valid_acc:0.390092
+Epoch [174]/[300] train_loss: 1.646846 valid_loss: 1.603191 valid_acc:0.401491
+Epoch [175]/[300] train_loss: 1.646715 valid_loss: 1.603059 valid_acc:0.403942
+Epoch [176]/[300] train_loss: 1.637094 valid_loss: 1.621818 valid_acc:0.384837
+Epoch [177]/[300] train_loss: 1.632263 valid_loss: 1.596973 valid_acc:0.400568
+Epoch [178]/[300] train_loss: 1.632233 valid_loss: 1.628816 valid_acc:0.386967
+Epoch [179]/[300] train_loss: 1.642711 valid_loss: 1.609476 valid_acc:0.391868
+Epoch [180]/[300] train_loss: 1.638078 valid_loss: 1.597772 valid_acc:0.407173
+Epoch [181]/[300] train_loss: 1.637386 valid_loss: 1.612775 valid_acc:0.393288
+Epoch [182]/[300] train_loss: 1.642383 valid_loss: 1.644749 valid_acc:0.380753
+Epoch [183]/[300] train_loss: 1.635579 valid_loss: 1.616596 valid_acc:0.396555
+Epoch [184]/[300] train_loss: 1.635965 valid_loss: 1.606229 valid_acc:0.400852
+Epoch [185]/[300] train_loss: 1.621755 valid_loss: 1.604962 valid_acc:0.395490
+Epoch [186]/[300] train_loss: 1.628571 valid_loss: 1.611267 valid_acc:0.399077
+Epoch [187]/[300] train_loss: 1.621415 valid_loss: 1.615743 valid_acc:0.395597
+Epoch [188]/[300] train_loss: 1.626523 valid_loss: 1.640042 valid_acc:0.381179
+Epoch [189]/[300] train_loss: 1.615545 valid_loss: 1.592008 valid_acc:0.411967
+Epoch [190]/[300] train_loss: 1.629863 valid_loss: 1.624575 valid_acc:0.397017
+Epoch [191]/[300] train_loss: 1.630159 valid_loss: 1.599177 valid_acc:0.396129
+Epoch [192]/[300] train_loss: 1.624514 valid_loss: 1.625551 valid_acc:0.383949
+Epoch [193]/[300] train_loss: 1.636005 valid_loss: 1.613084 valid_acc:0.402521
+Epoch [194]/[300] train_loss: 1.634964 valid_loss: 1.599684 valid_acc:0.401030
+Epoch [195]/[300] train_loss: 1.610571 valid_loss: 1.613998 valid_acc:0.388565
+Epoch [196]/[300] train_loss: 1.613008 valid_loss: 1.618439 valid_acc:0.396023
+Epoch [197]/[300] train_loss: 1.617563 valid_loss: 1.608619 valid_acc:0.397550
+Epoch [198]/[300] train_loss: 1.600132 valid_loss: 1.595249 valid_acc:0.413565
+Epoch [199]/[300] train_loss: 1.599521 valid_loss: 1.638456 valid_acc:0.384126
+Epoch [200]/[300] train_loss: 1.613406 valid_loss: 1.619226 valid_acc:0.394531
+Epoch [201]/[300] train_loss: 1.589094 valid_loss: 1.641086 valid_acc:0.376030
+Epoch [202]/[300] train_loss: 1.612387 valid_loss: 1.615983 valid_acc:0.403622
+Epoch [203]/[300] train_loss: 1.599791 valid_loss: 1.641149 valid_acc:0.392045
+Epoch [204]/[300] train_loss: 1.618665 valid_loss: 1.613284 valid_acc:0.399077
+Epoch [205]/[300] train_loss: 1.605231 valid_loss: 1.620393 valid_acc:0.390341
+Epoch [206]/[300] train_loss: 1.625171 valid_loss: 1.634253 valid_acc:0.385831
+Epoch [207]/[300] train_loss: 1.613823 valid_loss: 1.623657 valid_acc:0.387571
+Epoch [208]/[300] train_loss: 1.607888 valid_loss: 1.622668 valid_acc:0.392294
+Epoch [209]/[300] train_loss: 1.601503 valid_loss: 1.629288 valid_acc:0.388139
+Epoch [210]/[300] train_loss: 1.612775 valid_loss: 1.635248 valid_acc:0.383594
+Epoch [211]/[300] train_loss: 1.602159 valid_loss: 1.648744 valid_acc:0.382528
+Epoch [212]/[300] train_loss: 1.595486 valid_loss: 1.638747 valid_acc:0.392401
+Epoch [213]/[300] train_loss: 1.580945 valid_loss: 1.637793 valid_acc:0.389098
+Epoch [214]/[300] train_loss: 1.607593 valid_loss: 1.642266 valid_acc:0.379226
+Epoch [215]/[300] train_loss: 1.590512 valid_loss: 1.625766 valid_acc:0.392401
+Epoch [216]/[300] train_loss: 1.594106 valid_loss: 1.636822 valid_acc:0.384197
+Epoch [217]/[300] train_loss: 1.594842 valid_loss: 1.631807 valid_acc:0.384126
+Epoch [218]/[300] train_loss: 1.567952 valid_loss: 1.634255 valid_acc:0.385192
+Epoch [219]/[300] train_loss: 1.587165 valid_loss: 1.623725 valid_acc:0.395312
+Epoch [220]/[300] train_loss: 1.598418 valid_loss: 1.624301 valid_acc:0.404297
+Epoch [221]/[300] train_loss: 1.583736 valid_loss: 1.643139 valid_acc:0.381357
+Epoch [222]/[300] train_loss: 1.591381 valid_loss: 1.632175 valid_acc:0.393714
+Epoch [223]/[300] train_loss: 1.589588 valid_loss: 1.637230 valid_acc:0.387678
+Epoch [224]/[300] train_loss: 1.597844 valid_loss: 1.646930 valid_acc:0.385902
+Epoch [225]/[300] train_loss: 1.570825 valid_loss: 1.646696 valid_acc:0.388317
+Epoch [226]/[300] train_loss: 1.574831 valid_loss: 1.653558 valid_acc:0.382351
+Epoch [227]/[300] train_loss: 1.583602 valid_loss: 1.638251 valid_acc:0.384659
+Epoch [228]/[300] train_loss: 1.580539 valid_loss: 1.634889 valid_acc:0.388920
+Epoch [229]/[300] train_loss: 1.595566 valid_loss: 1.644528 valid_acc:0.391406
+Epoch [230]/[300] train_loss: 1.575887 valid_loss: 1.650604 valid_acc:0.385547
+Epoch [231]/[300] train_loss: 1.570706 valid_loss: 1.644965 valid_acc:0.388210
+Epoch [232]/[300] train_loss: 1.575663 valid_loss: 1.645941 valid_acc:0.390518
+Epoch [233]/[300] train_loss: 1.573764 valid_loss: 1.644191 valid_acc:0.388033
+Epoch [234]/[300] train_loss: 1.576526 valid_loss: 1.659696 valid_acc:0.380575
+Epoch [235]/[300] train_loss: 1.565686 valid_loss: 1.648919 valid_acc:0.389808
+Epoch [236]/[300] train_loss: 1.587377 valid_loss: 1.637862 valid_acc:0.390696
+Epoch [237]/[300] train_loss: 1.572627 valid_loss: 1.660813 valid_acc:0.392223
+Epoch [238]/[300] train_loss: 1.588048 valid_loss: 1.648316 valid_acc:0.393466
+Epoch [239]/[300] train_loss: 1.553705 valid_loss: 1.656634 valid_acc:0.387926
+Epoch [240]/[300] train_loss: 1.582856 valid_loss: 1.648184 valid_acc:0.401740
+Epoch [241]/[300] train_loss: 1.586531 valid_loss: 1.660338 valid_acc:0.383665
+Epoch [242]/[300] train_loss: 1.570885 valid_loss: 1.645081 valid_acc:0.389986
+Epoch [243]/[300] train_loss: 1.587358 valid_loss: 1.641484 valid_acc:0.397195
+Epoch [244]/[300] train_loss: 1.556243 valid_loss: 1.658641 valid_acc:0.391868
+Epoch [245]/[300] train_loss: 1.579559 valid_loss: 1.642365 valid_acc:0.393821
+Epoch [246]/[300] train_loss: 1.571640 valid_loss: 1.654809 valid_acc:0.392756
+Epoch [247]/[300] train_loss: 1.591947 valid_loss: 1.644668 valid_acc:0.395952
+Epoch [248]/[300] train_loss: 1.568238 valid_loss: 1.651713 valid_acc:0.392933
+Epoch [249]/[300] train_loss: 1.564875 valid_loss: 1.649701 valid_acc:0.392578
+Epoch [250]/[300] train_loss: 1.563209 valid_loss: 1.651085 valid_acc:0.385973
+Epoch [251]/[300] train_loss: 1.558810 valid_loss: 1.664979 valid_acc:0.389986
+Epoch [252]/[300] train_loss: 1.575362 valid_loss: 1.654507 valid_acc:0.380646
+Epoch [253]/[300] train_loss: 1.575490 valid_loss: 1.653764 valid_acc:0.382955
+Epoch [254]/[300] train_loss: 1.566738 valid_loss: 1.650668 valid_acc:0.386967
+Epoch [255]/[300] train_loss: 1.582634 valid_loss: 1.642984 valid_acc:0.393714
+Loaded pretrained weights for efficientnet-b0
+Epoch [0]/[100] train_loss: 1.907559 valid_loss: 1.950695 valid_acc:0.123047
+Epoch [1]/[100] train_loss: 1.887298 valid_loss: 1.944871 valid_acc:0.211541
+Epoch [2]/[100] train_loss: 1.884335 valid_loss: 1.874465 valid_acc:0.247230
+Epoch [3]/[100] train_loss: 1.870558 valid_loss: 2.033922 valid_acc:0.154332
+Epoch [4]/[100] train_loss: 1.861959 valid_loss: 1.849610 valid_acc:0.260724
+Epoch [5]/[100] train_loss: 1.857059 valid_loss: 1.996710 valid_acc:0.214347
+Epoch [6]/[100] train_loss: 1.851614 valid_loss: 1.878798 valid_acc:0.236648
+Epoch [7]/[100] train_loss: 1.847625 valid_loss: 1.923745 valid_acc:0.220135
+Epoch [8]/[100] train_loss: 1.841018 valid_loss: 1.978428 valid_acc:0.221200
+Epoch [9]/[100] train_loss: 1.839942 valid_loss: 1.928835 valid_acc:0.203161
+Epoch [10]/[100] train_loss: 1.836590 valid_loss: 1.885291 valid_acc:0.260902
+Epoch [11]/[100] train_loss: 1.839521 valid_loss: 1.786086 valid_acc:0.296058
+Epoch [12]/[100] train_loss: 1.827534 valid_loss: 2.023165 valid_acc:0.228835
+Loaded pretrained weights for efficientnet-b4
+Loaded pretrained weights for efficientnet-b4
+Epoch [0]/[100] train_loss: 1.922453 valid_loss: 1.925207 valid_acc:0.210792
+Epoch [1]/[100] train_loss: 1.905341 valid_loss: 1.932961 valid_acc:0.241461
+Epoch [2]/[100] train_loss: 1.900201 valid_loss: 1.851456 valid_acc:0.269113
+Epoch [3]/[100] train_loss: 1.889161 valid_loss: 1.795436 valid_acc:0.304142
+Epoch [4]/[100] train_loss: 1.879860 valid_loss: 1.853217 valid_acc:0.277689
+Epoch [5]/[100] train_loss: 1.874985 valid_loss: 1.864688 valid_acc:0.242587
+Epoch [6]/[100] train_loss: 1.870399 valid_loss: 1.762537 valid_acc:0.319549
+Epoch [7]/[100] train_loss: 1.871807 valid_loss: 1.811794 valid_acc:0.276744
+Epoch [8]/[100] train_loss: 1.866533 valid_loss: 1.840472 valid_acc:0.261010
+Epoch [9]/[100] train_loss: 1.859774 valid_loss: 1.866198 valid_acc:0.232594
+Epoch [10]/[100] train_loss: 1.856439 valid_loss: 1.803484 valid_acc:0.265879
+Epoch [11]/[100] train_loss: 1.856771 valid_loss: 1.742593 valid_acc:0.333939
+Epoch [12]/[100] train_loss: 1.854672 valid_loss: 1.812629 valid_acc:0.275000
+Epoch [13]/[100] train_loss: 1.852160 valid_loss: 1.964295 valid_acc:0.227943
+Epoch [14]/[100] train_loss: 1.848446 valid_loss: 1.736194 valid_acc:0.337972
+Epoch [15]/[100] train_loss: 1.847584 valid_loss: 1.725851 valid_acc:0.331432
+Epoch [16]/[100] train_loss: 1.840632 valid_loss: 1.735807 valid_acc:0.315443
+Epoch [17]/[100] train_loss: 1.844480 valid_loss: 1.754985 valid_acc:0.294695
+Epoch [18]/[100] train_loss: 1.839273 valid_loss: 1.730918 valid_acc:0.341352
+Epoch [19]/[100] train_loss: 1.832185 valid_loss: 1.707765 valid_acc:0.341751
+Epoch [20]/[100] train_loss: 1.838344 valid_loss: 1.750030 valid_acc:0.278452
+Epoch [21]/[100] train_loss: 1.841972 valid_loss: 1.741206 valid_acc:0.316679
+Epoch [22]/[100] train_loss: 1.832385 valid_loss: 1.728984 valid_acc:0.327544
+Epoch [23]/[100] train_loss: 1.831261 valid_loss: 1.684840 valid_acc:0.348038
+Epoch [24]/[100] train_loss: 1.830190 valid_loss: 1.730029 valid_acc:0.314317
+Epoch [25]/[100] train_loss: 1.835692 valid_loss: 1.710185 valid_acc:0.326381
+Epoch [26]/[100] train_loss: 1.825349 valid_loss: 1.707518 valid_acc:0.335029
+Epoch [27]/[100] train_loss: 1.820720 valid_loss: 1.697249 valid_acc:0.335247
+Epoch [28]/[100] train_loss: 1.818906 valid_loss: 1.672261 valid_acc:0.361010
+Epoch [29]/[100] train_loss: 1.820268 valid_loss: 1.690607 valid_acc:0.347384
+Epoch [30]/[100] train_loss: 1.816884 valid_loss: 1.726121 valid_acc:0.337754
+Epoch [31]/[100] train_loss: 1.819712 valid_loss: 1.701692 valid_acc:0.340044
+Epoch [32]/[100] train_loss: 1.810279 valid_loss: 1.646242 valid_acc:0.373692
+Epoch [33]/[100] train_loss: 1.811726 valid_loss: 1.642636 valid_acc:0.374273
+Epoch [34]/[100] train_loss: 1.811661 valid_loss: 1.653509 valid_acc:0.371948
+Epoch [35]/[100] train_loss: 1.814537 valid_loss: 1.631522 valid_acc:0.388336
+Epoch [36]/[100] train_loss: 1.802117 valid_loss: 1.639028 valid_acc:0.381722
+Epoch [37]/[100] train_loss: 1.804009 valid_loss: 1.643439 valid_acc:0.372638
+Epoch [38]/[100] train_loss: 1.804411 valid_loss: 1.649210 valid_acc:0.376999
+Epoch [39]/[100] train_loss: 1.796601 valid_loss: 1.645648 valid_acc:0.375218
+Epoch [40]/[100] train_loss: 1.797674 valid_loss: 1.677504 valid_acc:0.339026
+Epoch [41]/[100] train_loss: 1.805384 valid_loss: 1.654059 valid_acc:0.373910
+Epoch [42]/[100] train_loss: 1.795852 valid_loss: 1.634212 valid_acc:0.373292
+Epoch [43]/[100] train_loss: 1.794505 valid_loss: 1.640397 valid_acc:0.370676
+Epoch [44]/[100] train_loss: 1.791018 valid_loss: 1.606588 valid_acc:0.393750
+Epoch [45]/[100] train_loss: 1.790606 valid_loss: 1.617663 valid_acc:0.390153
+Epoch [46]/[100] train_loss: 1.790408 valid_loss: 1.608565 valid_acc:0.392406
+Epoch [47]/[100] train_loss: 1.791306 valid_loss: 1.600781 valid_acc:0.392696
+Epoch [48]/[100] train_loss: 1.781005 valid_loss: 1.599325 valid_acc:0.386701
+Epoch [49]/[100] train_loss: 1.780743 valid_loss: 1.593246 valid_acc:0.394622
+Epoch [50]/[100] train_loss: 1.782379 valid_loss: 1.591694 valid_acc:0.396475
+Epoch [51]/[100] train_loss: 1.778831 valid_loss: 1.607252 valid_acc:0.392951
+Epoch [52]/[100] train_loss: 1.770091 valid_loss: 1.633454 valid_acc:0.365770
+Epoch [53]/[100] train_loss: 1.774246 valid_loss: 1.600947 valid_acc:0.392515
+Epoch [54]/[100] train_loss: 1.770875 valid_loss: 1.599880 valid_acc:0.391388
+Epoch [55]/[100] train_loss: 1.770340 valid_loss: 1.575359 valid_acc:0.407158
+Epoch [56]/[100] train_loss: 1.771885 valid_loss: 1.564849 valid_acc:0.412645
+Epoch [57]/[100] train_loss: 1.768174 valid_loss: 1.596709 valid_acc:0.393350
+Epoch [58]/[100] train_loss: 1.766242 valid_loss: 1.586083 valid_acc:0.402217
+Epoch [59]/[100] train_loss: 1.763626 valid_loss: 1.573995 valid_acc:0.412754
+Epoch [60]/[100] train_loss: 1.760060 valid_loss: 1.568315 valid_acc:0.412282
+Epoch [61]/[100] train_loss: 1.770301 valid_loss: 1.568837 valid_acc:0.420385
+Epoch [62]/[100] train_loss: 1.757188 valid_loss: 1.566543 valid_acc:0.419767
+Epoch [63]/[100] train_loss: 1.755750 valid_loss: 1.594995 valid_acc:0.397093
+Epoch [64]/[100] train_loss: 1.755959 valid_loss: 1.564175 valid_acc:0.412609
+Epoch [65]/[100] train_loss: 1.750996 valid_loss: 1.568150 valid_acc:0.416061
+Epoch [66]/[100] train_loss: 1.745411 valid_loss: 1.543963 valid_acc:0.427289
+Epoch [67]/[100] train_loss: 1.748364 valid_loss: 1.552663 valid_acc:0.423292
+Epoch [68]/[100] train_loss: 1.749298 valid_loss: 1.548620 valid_acc:0.423619
+Epoch [69]/[100] train_loss: 1.746025 valid_loss: 1.552324 valid_acc:0.422747
+Epoch [70]/[100] train_loss: 1.743778 valid_loss: 1.547973 valid_acc:0.425509
+Epoch [71]/[100] train_loss: 1.743429 valid_loss: 1.539895 valid_acc:0.422929
+Epoch [72]/[100] train_loss: 1.744507 valid_loss: 1.546228 valid_acc:0.426199
+Epoch [73]/[100] train_loss: 1.737919 valid_loss: 1.541790 valid_acc:0.427471
+Epoch [74]/[100] train_loss: 1.738018 valid_loss: 1.549090 valid_acc:0.420967
+Epoch [75]/[100] train_loss: 1.736017 valid_loss: 1.543021 valid_acc:0.426054
+Epoch [76]/[100] train_loss: 1.728737 valid_loss: 1.547846 valid_acc:0.417115
+Epoch [77]/[100] train_loss: 1.731365 valid_loss: 1.549932 valid_acc:0.417878
+Epoch [78]/[100] train_loss: 1.733990 valid_loss: 1.530825 valid_acc:0.422747
+Epoch [79]/[100] train_loss: 1.745703 valid_loss: 1.539267 valid_acc:0.424201
+Epoch [80]/[100] train_loss: 1.730950 valid_loss: 1.526237 valid_acc:0.426563
+Epoch [81]/[100] train_loss: 1.731910 valid_loss: 1.539552 valid_acc:0.419295
+Epoch [82]/[100] train_loss: 1.725210 valid_loss: 1.535208 valid_acc:0.418205
+Epoch [83]/[100] train_loss: 1.724696 valid_loss: 1.527962 valid_acc:0.426926
+Epoch [84]/[100] train_loss: 1.724621 valid_loss: 1.533484 valid_acc:0.424382
+Epoch [85]/[100] train_loss: 1.728440 valid_loss: 1.533234 valid_acc:0.423110
+Epoch [86]/[100] train_loss: 1.728366 valid_loss: 1.533870 valid_acc:0.421294
+Epoch [87]/[100] train_loss: 1.722198 valid_loss: 1.529947 valid_acc:0.422384
+Epoch [88]/[100] train_loss: 1.723830 valid_loss: 1.530422 valid_acc:0.423474
+Epoch [89]/[100] train_loss: 1.713351 valid_loss: 1.534879 valid_acc:0.424927
+Epoch [90]/[100] train_loss: 1.723487 valid_loss: 1.536316 valid_acc:0.418568
+Epoch [91]/[100] train_loss: 1.727678 valid_loss: 1.531813 valid_acc:0.422202
+Epoch [92]/[100] train_loss: 1.717988 valid_loss: 1.531069 valid_acc:0.422202
+Epoch [93]/[100] train_loss: 1.720269 valid_loss: 1.530142 valid_acc:0.424019
+Epoch [94]/[100] train_loss: 1.712772 valid_loss: 1.529046 valid_acc:0.420385
+Epoch [95]/[100] train_loss: 1.721091 valid_loss: 1.530362 valid_acc:0.420567
+Epoch [96]/[100] train_loss: 1.724838 valid_loss: 1.530923 valid_acc:0.422202
+Epoch [97]/[100] train_loss: 1.721840 valid_loss: 1.528293 valid_acc:0.423110
+Epoch [98]/[100] train_loss: 1.716971 valid_loss: 1.527972 valid_acc:0.424019
+Epoch [99]/[100] train_loss: 1.715934 valid_loss: 1.529686 valid_acc:0.422747
+Loaded pretrained weights for efficientnet-b4
+Epoch [0]/[100] train_loss: 2.802255 train_inte_loss: 1.921786 train_speech_loss: 1.574041 train_face_loss: 1.947836 valid_loss: 2.725313 valid_inte_loss: 1.857972 valid_speech_loss: 1.522475 valid_face_loss: 1.946889 valid_acc: 0.412536
+Epoch [1]/[100] train_loss: 2.703145 train_inte_loss: 1.822595 train_speech_loss: 1.576299 train_face_loss: 1.945901 valid_loss: 2.596441 valid_inte_loss: 1.729577 valid_speech_loss: 1.523020 valid_face_loss: 1.944437 valid_acc: 0.424346
+Epoch [2]/[100] train_loss: 2.619001 train_inte_loss: 1.740199 train_speech_loss: 1.571409 train_face_loss: 1.943798 valid_loss: 2.515171 valid_inte_loss: 1.648932 valid_speech_loss: 1.522718 valid_face_loss: 1.942239 valid_acc: 0.427798
+Loaded pretrained weights for efficientnet-b4
+Epoch [0]/[100] train_loss: 2.594382 train_inte_loss: 1.718101 train_speech_loss: 1.576669 train_face_loss: 1.928455 valid_loss: 2.386874 valid_inte_loss: 1.523847 valid_speech_loss: 1.536878 valid_face_loss: 1.915228 valid_acc: 0.423328
+Epoch [1]/[100] train_loss: 2.464299 train_inte_loss: 1.591056 train_speech_loss: 1.575291 train_face_loss: 1.917679 valid_loss: 2.361431 valid_inte_loss: 1.502025 valid_speech_loss: 1.527479 valid_face_loss: 1.910145 valid_acc: 0.426272
+Loaded pretrained weights for efficientnet-b4
+Epoch [0]/[100] train_loss: 2.540343 train_inte_loss: 1.657986 train_speech_loss: 1.600822 train_face_loss: 1.928605 valid_loss: 2.474691 valid_inte_loss: 1.586150 valid_speech_loss: 1.637163 valid_face_loss: 1.917001 valid_acc: 0.407195
+Epoch [1]/[100] train_loss: 2.511268 train_inte_loss: 1.617929 train_speech_loss: 1.642885 train_face_loss: 1.930472 valid_loss: 2.499760 valid_inte_loss: 1.605609 valid_speech_loss: 1.643496 valid_face_loss: 1.933109 valid_acc: 0.393714
+Epoch [2]/[100] train_loss: 2.490255 train_inte_loss: 1.600449 train_speech_loss: 1.643994 train_face_loss: 1.915228 valid_loss: 2.433701 valid_inte_loss: 1.547572 valid_speech_loss: 1.630513 valid_face_loss: 1.914001 valid_acc: 0.403125
+Epoch [3]/[100] train_loss: 2.469484 train_inte_loss: 1.579617 train_speech_loss: 1.644553 train_face_loss: 1.914914 valid_loss: 2.410163 valid_inte_loss: 1.527047 valid_speech_loss: 1.615829 valid_face_loss: 1.916634 valid_acc: 0.418314
+Epoch [4]/[100] train_loss: 2.462808 train_inte_loss: 1.574314 train_speech_loss: 1.640603 train_face_loss: 1.913373 valid_loss: 2.412339 valid_inte_loss: 1.526303 valid_speech_loss: 1.637265 valid_face_loss: 1.906881 valid_acc: 0.424055
+Epoch [5]/[100] train_loss: 5.156107 train_inte_loss: 3.941743 train_speech_loss: 2.681199 train_face_loss: 2.176258 valid_loss: 3.182877 valid_inte_loss: 2.157827 valid_speech_loss: 1.990163 valid_face_loss: 2.110035 valid_acc: 0.153634
+Epoch [6]/[100] train_loss: 3.029560 train_inte_loss: 2.026352 train_speech_loss: 2.023615 train_face_loss: 1.989214 valid_loss: 2.922873 valid_inte_loss: 1.919966 valid_speech_loss: 2.054901 valid_face_loss: 1.956728 valid_acc: 0.210102
+Epoch [7]/[100] train_loss: 2.990400 train_inte_loss: 1.984363 train_speech_loss: 2.032925 train_face_loss: 1.991221 valid_loss: 2.895581 valid_inte_loss: 1.899498 valid_speech_loss: 1.957257 valid_face_loss: 2.027073 valid_acc: 0.221403
+Epoch [8]/[100] train_loss: 2.936576 train_inte_loss: 1.936620 train_speech_loss: 2.013031 train_face_loss: 1.986793 valid_loss: 2.892259 valid_inte_loss: 1.895326 valid_speech_loss: 2.013555 valid_face_loss: 1.974176 valid_acc: 0.285865
+Epoch [9]/[100] train_loss: 2.932292 train_inte_loss: 1.929225 train_speech_loss: 2.034524 train_face_loss: 1.977747 valid_loss: 2.838402 valid_inte_loss: 1.841810 valid_speech_loss: 1.998575 valid_face_loss: 1.987791 valid_acc: 0.263953
+Epoch [10]/[100] train_loss: 2.915864 train_inte_loss: 1.916294 train_speech_loss: 2.012052 train_face_loss: 1.986227 valid_loss: 2.862211 valid_inte_loss: 1.884441 valid_speech_loss: 1.961656 valid_face_loss: 1.949424 valid_acc: 0.275908
+Epoch [11]/[100] train_loss: 2.909429 train_inte_loss: 1.905073 train_speech_loss: 2.026889 train_face_loss: 1.990535 valid_loss: 2.909155 valid_inte_loss: 1.906728 valid_speech_loss: 1.988415 valid_face_loss: 2.021295 valid_acc: 0.245930
+Epoch [12]/[100] train_loss: 2.951957 train_inte_loss: 1.947105 train_speech_loss: 2.037314 train_face_loss: 1.982096 valid_loss: 2.943918 valid_inte_loss: 1.941281 valid_speech_loss: 2.063094 valid_face_loss: 1.947451 valid_acc: 0.264935
+Epoch [13]/[100] train_loss: 2.896184 train_inte_loss: 1.894467 train_speech_loss: 2.032816 train_face_loss: 1.974050 valid_loss: 2.940761 valid_inte_loss: 1.929513 valid_speech_loss: 2.081424 valid_face_loss: 1.963568 valid_acc: 0.258285
+Epoch [14]/[100] train_loss: 2.895138 train_inte_loss: 1.894046 train_speech_loss: 2.022623 train_face_loss: 1.981744 valid_loss: 2.986058 valid_inte_loss: 1.974509 valid_speech_loss: 2.093439 valid_face_loss: 1.952757 valid_acc: 0.246294
+Epoch [15]/[100] train_loss: 2.923939 train_inte_loss: 1.920295 train_speech_loss: 2.036851 train_face_loss: 1.977724 valid_loss: 3.040105 valid_inte_loss: 2.057926 valid_speech_loss: 1.976231 valid_face_loss: 1.952485 valid_acc: 0.240661
+Loaded pretrained weights for efficientnet-b4
+Epoch [0]/[100] train_loss: 2.540343 train_inte_loss: 1.657986 train_speech_loss: 1.600822 train_face_loss: 1.928605 valid_loss: 2.474691 valid_inte_loss: 1.586150 valid_speech_loss: 1.637163 valid_face_loss: 1.917001 valid_acc: 0.407195
+Epoch [1]/[100] train_loss: 2.511268 train_inte_loss: 1.617929 train_speech_loss: 1.642885 train_face_loss: 1.930472 valid_loss: 2.499760 valid_inte_loss: 1.605609 valid_speech_loss: 1.643496 valid_face_loss: 1.933109 valid_acc: 0.393714
+Epoch [2]/[100] train_loss: 2.490255 train_inte_loss: 1.600449 train_speech_loss: 1.643994 train_face_loss: 1.915228 valid_loss: 2.433701 valid_inte_loss: 1.547572 valid_speech_loss: 1.630513 valid_face_loss: 1.914001 valid_acc: 0.403125
+Epoch [3]/[100] train_loss: 2.469484 train_inte_loss: 1.579617 train_speech_loss: 1.644553 train_face_loss: 1.914914 valid_loss: 2.410163 valid_inte_loss: 1.527047 valid_speech_loss: 1.615829 valid_face_loss: 1.916634 valid_acc: 0.418314
+Epoch [4]/[100] train_loss: 2.462808 train_inte_loss: 1.574314 train_speech_loss: 1.640603 train_face_loss: 1.913373 valid_loss: 2.412339 valid_inte_loss: 1.526303 valid_speech_loss: 1.637265 valid_face_loss: 1.906881 valid_acc: 0.424055
+Epoch [5]/[100] train_loss: 5.156107 train_inte_loss: 3.941743 train_speech_loss: 2.681199 train_face_loss: 2.176258 valid_loss: 3.182877 valid_inte_loss: 2.157827 valid_speech_loss: 1.990163 valid_face_loss: 2.110035 valid_acc: 0.153634
+Epoch [6]/[100] train_loss: 3.029560 train_inte_loss: 2.026352 train_speech_loss: 2.023615 train_face_loss: 1.989214 valid_loss: 2.922873 valid_inte_loss: 1.919966 valid_speech_loss: 2.054901 valid_face_loss: 1.956728 valid_acc: 0.210102
+Epoch [7]/[100] train_loss: 2.990400 train_inte_loss: 1.984363 train_speech_loss: 2.032925 train_face_loss: 1.991221 valid_loss: 2.895581 valid_inte_loss: 1.899498 valid_speech_loss: 1.957257 valid_face_loss: 2.027073 valid_acc: 0.221403
+Loaded pretrained weights for efficientnet-b4
+Epoch [0]/[100] train_loss: 2.519340 train_inte_loss: 1.643189 train_speech_loss: 1.576907 train_face_loss: 1.927699 valid_loss: 2.397722 valid_inte_loss: 1.520647 valid_speech_loss: 1.545964 valid_face_loss: 1.962334 valid_acc: 0.427907
+Epoch [1]/[100] train_loss: 2.458473 train_inte_loss: 1.580552 train_speech_loss: 1.584530 train_face_loss: 1.927154 valid_loss: 2.374563 valid_inte_loss: 1.508912 valid_speech_loss: 1.534822 valid_face_loss: 1.927779 valid_acc: 0.421330
+Loaded pretrained weights for efficientnet-b4
+Epoch [0]/[100] train_loss: 1.643330 train_inte_loss: 1.643330 train_speech_loss: 1.575577 train_face_loss: 1.948876 valid_loss: 1.533056 valid_inte_loss: 1.533056 valid_speech_loss: 1.535857 valid_face_loss: 1.947112 valid_acc: 0.419913
+Epoch [1]/[100] train_loss: 1.582564 train_inte_loss: 1.582564 train_speech_loss: 1.581171 train_face_loss: 1.949373 valid_loss: 1.494740 valid_inte_loss: 1.494740 valid_speech_loss: 1.544518 valid_face_loss: 1.947953 valid_acc: 0.429688
+Epoch [2]/[100] train_loss: 1.563901 train_inte_loss: 1.563901 train_speech_loss: 1.577167 train_face_loss: 1.949296 valid_loss: 1.480953 valid_inte_loss: 1.480953 valid_speech_loss: 1.539537 valid_face_loss: 1.949015 valid_acc: 0.440952
+Epoch [3]/[100] train_loss: 1.552943 train_inte_loss: 1.552943 train_speech_loss: 1.577926 train_face_loss: 1.948719 valid_loss: 1.479848 valid_inte_loss: 1.479848 valid_speech_loss: 1.536935 valid_face_loss: 1.940484 valid_acc: 0.443132
+Epoch [4]/[100] train_loss: 1.554759 train_inte_loss: 1.554759 train_speech_loss: 1.577785 train_face_loss: 1.948714 valid_loss: 1.467777 valid_inte_loss: 1.467777 valid_speech_loss: 1.537345 valid_face_loss: 1.948002 valid_acc: 0.438263
+Epoch [5]/[100] train_loss: 1.549084 train_inte_loss: 1.549084 train_speech_loss: 1.575983 train_face_loss: 1.948648 valid_loss: 1.465276 valid_inte_loss: 1.465276 valid_speech_loss: 1.530010 valid_face_loss: 1.947291 valid_acc: 0.439535
+Epoch [6]/[100] train_loss: 1.552911 train_inte_loss: 1.552911 train_speech_loss: 1.576646 train_face_loss: 1.948943 valid_loss: 1.485358 valid_inte_loss: 1.485358 valid_speech_loss: 1.530743 valid_face_loss: 1.947184 valid_acc: 0.436810
+Epoch [7]/[100] train_loss: 1.544130 train_inte_loss: 1.544130 train_speech_loss: 1.574559 train_face_loss: 1.947180 valid_loss: 1.451053 valid_inte_loss: 1.451053 valid_speech_loss: 1.531259 valid_face_loss: 1.950700 valid_acc: 0.448219
+Epoch [8]/[100] train_loss: 1.542248 train_inte_loss: 1.542248 train_speech_loss: 1.578299 train_face_loss: 1.947915 valid_loss: 1.468274 valid_inte_loss: 1.468274 valid_speech_loss: 1.528309 valid_face_loss: 1.950268 valid_acc: 0.454397
+Epoch [9]/[100] train_loss: 1.536615 train_inte_loss: 1.536615 train_speech_loss: 1.577338 train_face_loss: 1.948245 valid_loss: 1.464903 valid_inte_loss: 1.464903 valid_speech_loss: 1.527450 valid_face_loss: 1.950105 valid_acc: 0.446802
+Epoch [10]/[100] train_loss: 1.535970 train_inte_loss: 1.535970 train_speech_loss: 1.574196 train_face_loss: 1.947513 valid_loss: 1.462578 valid_inte_loss: 1.462578 valid_speech_loss: 1.530018 valid_face_loss: 1.947950 valid_acc: 0.449273
+Epoch [11]/[100] train_loss: 1.535250 train_inte_loss: 1.535250 train_speech_loss: 1.580763 train_face_loss: 1.947431 valid_loss: 1.448144 valid_inte_loss: 1.448144 valid_speech_loss: 1.524798 valid_face_loss: 1.947478 valid_acc: 0.452362
+Epoch [12]/[100] train_loss: 1.534558 train_inte_loss: 1.534558 train_speech_loss: 1.578195 train_face_loss: 1.947810 valid_loss: 1.446677 valid_inte_loss: 1.446677 valid_speech_loss: 1.528283 valid_face_loss: 1.951531 valid_acc: 0.452398
+Epoch [13]/[100] train_loss: 1.527934 train_inte_loss: 1.527934 train_speech_loss: 1.578505 train_face_loss: 1.947543 valid_loss: 1.446586 valid_inte_loss: 1.446586 valid_speech_loss: 1.524567 valid_face_loss: 1.951979 valid_acc: 0.453852
+Epoch [14]/[100] train_loss: 1.535282 train_inte_loss: 1.535282 train_speech_loss: 1.579615 train_face_loss: 1.947148 valid_loss: 1.466954 valid_inte_loss: 1.466954 valid_speech_loss: 1.530666 valid_face_loss: 1.948822 valid_acc: 0.455305
+Epoch [15]/[100] train_loss: 1.529593 train_inte_loss: 1.529593 train_speech_loss: 1.579735 train_face_loss: 1.947531 valid_loss: 1.460178 valid_inte_loss: 1.460178 valid_speech_loss: 1.532279 valid_face_loss: 1.944331 valid_acc: 0.441715
+Epoch [16]/[100] train_loss: 1.523505 train_inte_loss: 1.523505 train_speech_loss: 1.578296 train_face_loss: 1.946743 valid_loss: 1.460072 valid_inte_loss: 1.460072 valid_speech_loss: 1.527359 valid_face_loss: 1.944566 valid_acc: 0.456541
+Epoch [17]/[100] train_loss: 1.522350 train_inte_loss: 1.522350 train_speech_loss: 1.580959 train_face_loss: 1.946708 valid_loss: 1.452019 valid_inte_loss: 1.452019 valid_speech_loss: 1.529679 valid_face_loss: 1.944727 valid_acc: 0.452217
+Epoch [18]/[100] train_loss: 1.526710 train_inte_loss: 1.526710 train_speech_loss: 1.583096 train_face_loss: 1.946619 valid_loss: 1.456287 valid_inte_loss: 1.456287 valid_speech_loss: 1.528452 valid_face_loss: 1.945052 valid_acc: 0.451635
+Epoch [19]/[100] train_loss: 1.523694 train_inte_loss: 1.523694 train_speech_loss: 1.582830 train_face_loss: 1.946959 valid_loss: 1.449269 valid_inte_loss: 1.449269 valid_speech_loss: 1.529068 valid_face_loss: 1.944745 valid_acc: 0.450690
+Epoch [20]/[100] train_loss: 1.516434 train_inte_loss: 1.516434 train_speech_loss: 1.581494 train_face_loss: 1.946888 valid_loss: 1.443917 valid_inte_loss: 1.443917 valid_speech_loss: 1.527050 valid_face_loss: 1.952939 valid_acc: 0.450545
+Epoch [21]/[100] train_loss: 1.523032 train_inte_loss: 1.523032 train_speech_loss: 1.579002 train_face_loss: 1.946582 valid_loss: 1.431893 valid_inte_loss: 1.431893 valid_speech_loss: 1.529170 valid_face_loss: 1.947220 valid_acc: 0.458757
+Epoch [22]/[100] train_loss: 1.512591 train_inte_loss: 1.512591 train_speech_loss: 1.579550 train_face_loss: 1.946837 valid_loss: 1.435210 valid_inte_loss: 1.435210 valid_speech_loss: 1.531032 valid_face_loss: 1.945392 valid_acc: 0.446584
+Epoch [23]/[100] train_loss: 1.515291 train_inte_loss: 1.515291 train_speech_loss: 1.582249 train_face_loss: 1.946684 valid_loss: 1.434296 valid_inte_loss: 1.434296 valid_speech_loss: 1.527690 valid_face_loss: 1.945377 valid_acc: 0.451308
+Epoch [24]/[100] train_loss: 1.519790 train_inte_loss: 1.519790 train_speech_loss: 1.581356 train_face_loss: 1.947529 valid_loss: 1.435639 valid_inte_loss: 1.435639 valid_speech_loss: 1.528943 valid_face_loss: 1.944103 valid_acc: 0.456577
+Epoch [25]/[100] train_loss: 1.512118 train_inte_loss: 1.512118 train_speech_loss: 1.581199 train_face_loss: 1.947267 valid_loss: 1.430164 valid_inte_loss: 1.430164 valid_speech_loss: 1.527916 valid_face_loss: 1.945711 valid_acc: 0.454578
+Epoch [26]/[100] train_loss: 1.521139 train_inte_loss: 1.521139 train_speech_loss: 1.586399 train_face_loss: 1.947093 valid_loss: 1.436726 valid_inte_loss: 1.436726 valid_speech_loss: 1.527911 valid_face_loss: 1.948290 valid_acc: 0.455451
+Epoch [27]/[100] train_loss: 1.512257 train_inte_loss: 1.512257 train_speech_loss: 1.584547 train_face_loss: 1.946781 valid_loss: 1.443999 valid_inte_loss: 1.443999 valid_speech_loss: 1.530554 valid_face_loss: 1.944282 valid_acc: 0.449673
+Epoch [28]/[100] train_loss: 1.518080 train_inte_loss: 1.518080 train_speech_loss: 1.583916 train_face_loss: 1.946697 valid_loss: 1.442921 valid_inte_loss: 1.442921 valid_speech_loss: 1.535929 valid_face_loss: 1.945461 valid_acc: 0.448619
+Epoch [29]/[100] train_loss: 1.514530 train_inte_loss: 1.514530 train_speech_loss: 1.587683 train_face_loss: 1.947742 valid_loss: 1.436690 valid_inte_loss: 1.436690 valid_speech_loss: 1.529280 valid_face_loss: 1.946510 valid_acc: 0.454033
+Epoch [30]/[100] train_loss: 1.507805 train_inte_loss: 1.507805 train_speech_loss: 1.583698 train_face_loss: 1.946599 valid_loss: 1.436775 valid_inte_loss: 1.436775 valid_speech_loss: 1.528694 valid_face_loss: 1.947789 valid_acc: 0.456541
+Epoch [31]/[100] train_loss: 1.505141 train_inte_loss: 1.505141 train_speech_loss: 1.583584 train_face_loss: 1.946988 valid_loss: 1.435935 valid_inte_loss: 1.435935 valid_speech_loss: 1.530271 valid_face_loss: 1.947267 valid_acc: 0.457086
+Epoch [32]/[100] train_loss: 1.508247 train_inte_loss: 1.508247 train_speech_loss: 1.585723 train_face_loss: 1.947034 valid_loss: 1.439079 valid_inte_loss: 1.439079 valid_speech_loss: 1.529341 valid_face_loss: 1.947988 valid_acc: 0.454760
+Epoch [33]/[100] train_loss: 1.505609 train_inte_loss: 1.505609 train_speech_loss: 1.583365 train_face_loss: 1.947458 valid_loss: 1.424632 valid_inte_loss: 1.424632 valid_speech_loss: 1.528753 valid_face_loss: 1.950417 valid_acc: 0.460174
+Epoch [34]/[100] train_loss: 1.506920 train_inte_loss: 1.506920 train_speech_loss: 1.586822 train_face_loss: 1.947050 valid_loss: 1.434028 valid_inte_loss: 1.434028 valid_speech_loss: 1.528554 valid_face_loss: 1.944917 valid_acc: 0.454360
+Epoch [35]/[100] train_loss: 1.503250 train_inte_loss: 1.503250 train_speech_loss: 1.581517 train_face_loss: 1.947055 valid_loss: 1.432505 valid_inte_loss: 1.432505 valid_speech_loss: 1.531005 valid_face_loss: 1.946361 valid_acc: 0.458939
+Epoch [36]/[100] train_loss: 1.510144 train_inte_loss: 1.510144 train_speech_loss: 1.589906 train_face_loss: 1.947066 valid_loss: 1.418815 valid_inte_loss: 1.418815 valid_speech_loss: 1.528605 valid_face_loss: 1.943763 valid_acc: 0.462718
+Epoch [37]/[100] train_loss: 1.501515 train_inte_loss: 1.501515 train_speech_loss: 1.586011 train_face_loss: 1.946924 valid_loss: 1.434401 valid_inte_loss: 1.434401 valid_speech_loss: 1.526338 valid_face_loss: 1.944209 valid_acc: 0.449346
+Epoch [38]/[100] train_loss: 1.500507 train_inte_loss: 1.500507 train_speech_loss: 1.587233 train_face_loss: 1.946588 valid_loss: 1.418744 valid_inte_loss: 1.418744 valid_speech_loss: 1.529042 valid_face_loss: 1.946250 valid_acc: 0.461446
+Epoch [39]/[100] train_loss: 1.501851 train_inte_loss: 1.501851 train_speech_loss: 1.585682 train_face_loss: 1.947133 valid_loss: 1.430060 valid_inte_loss: 1.430060 valid_speech_loss: 1.528599 valid_face_loss: 1.944135 valid_acc: 0.451635
+Epoch [40]/[100] train_loss: 1.499701 train_inte_loss: 1.499701 train_speech_loss: 1.585250 train_face_loss: 1.946835 valid_loss: 1.426856 valid_inte_loss: 1.426856 valid_speech_loss: 1.531907 valid_face_loss: 1.946859 valid_acc: 0.457631
+Epoch [41]/[100] train_loss: 1.497251 train_inte_loss: 1.497251 train_speech_loss: 1.585606 train_face_loss: 1.947028 valid_loss: 1.415060 valid_inte_loss: 1.415060 valid_speech_loss: 1.531933 valid_face_loss: 1.944326 valid_acc: 0.461991
+Epoch [42]/[100] train_loss: 1.497100 train_inte_loss: 1.497100 train_speech_loss: 1.585244 train_face_loss: 1.946948 valid_loss: 1.425490 valid_inte_loss: 1.425490 valid_speech_loss: 1.531575 valid_face_loss: 1.945013 valid_acc: 0.456577
+Epoch [43]/[100] train_loss: 1.495050 train_inte_loss: 1.495050 train_speech_loss: 1.586527 train_face_loss: 1.946927 valid_loss: 1.417573 valid_inte_loss: 1.417573 valid_speech_loss: 1.531995 valid_face_loss: 1.946480 valid_acc: 0.461810
+Epoch [44]/[100] train_loss: 1.499731 train_inte_loss: 1.499731 train_speech_loss: 1.587912 train_face_loss: 1.947247 valid_loss: 1.427263 valid_inte_loss: 1.427263 valid_speech_loss: 1.530034 valid_face_loss: 1.945089 valid_acc: 0.455269
+Epoch [45]/[100] train_loss: 1.494660 train_inte_loss: 1.494660 train_speech_loss: 1.587975 train_face_loss: 1.947197 valid_loss: 1.441824 valid_inte_loss: 1.441824 valid_speech_loss: 1.531559 valid_face_loss: 1.947323 valid_acc: 0.458721
+Epoch [46]/[100] train_loss: 1.491817 train_inte_loss: 1.491817 train_speech_loss: 1.584136 train_face_loss: 1.947035 valid_loss: 1.432202 valid_inte_loss: 1.432202 valid_speech_loss: 1.530623 valid_face_loss: 1.945243 valid_acc: 0.458757
+Epoch [47]/[100] train_loss: 1.492278 train_inte_loss: 1.492278 train_speech_loss: 1.588744 train_face_loss: 1.947267 valid_loss: 1.440051 valid_inte_loss: 1.440051 valid_speech_loss: 1.532020 valid_face_loss: 1.957890 valid_acc: 0.457667
+Epoch [48]/[100] train_loss: 1.490581 train_inte_loss: 1.490581 train_speech_loss: 1.588334 train_face_loss: 1.947181 valid_loss: 1.413168 valid_inte_loss: 1.413168 valid_speech_loss: 1.533147 valid_face_loss: 1.946980 valid_acc: 0.462173
+Epoch [49]/[100] train_loss: 1.491498 train_inte_loss: 1.491498 train_speech_loss: 1.588179 train_face_loss: 1.947354 valid_loss: 1.415359 valid_inte_loss: 1.415359 valid_speech_loss: 1.530115 valid_face_loss: 1.946848 valid_acc: 0.458757
+Epoch [50]/[100] train_loss: 1.490494 train_inte_loss: 1.490494 train_speech_loss: 1.588313 train_face_loss: 1.947833 valid_loss: 1.409055 valid_inte_loss: 1.409055 valid_speech_loss: 1.531129 valid_face_loss: 1.942818 valid_acc: 0.458539
+Epoch [51]/[100] train_loss: 1.490699 train_inte_loss: 1.490699 train_speech_loss: 1.587697 train_face_loss: 1.947109 valid_loss: 1.418321 valid_inte_loss: 1.418321 valid_speech_loss: 1.530746 valid_face_loss: 1.947246 valid_acc: 0.456032
+Epoch [52]/[100] train_loss: 1.486131 train_inte_loss: 1.486131 train_speech_loss: 1.584080 train_face_loss: 1.947892 valid_loss: 1.423453 valid_inte_loss: 1.423453 valid_speech_loss: 1.532467 valid_face_loss: 1.948313 valid_acc: 0.453852
+Epoch [53]/[100] train_loss: 1.483893 train_inte_loss: 1.483893 train_speech_loss: 1.586066 train_face_loss: 1.948137 valid_loss: 1.407690 valid_inte_loss: 1.407690 valid_speech_loss: 1.532882 valid_face_loss: 1.947560 valid_acc: 0.464353
+Epoch [54]/[100] train_loss: 1.487889 train_inte_loss: 1.487889 train_speech_loss: 1.588715 train_face_loss: 1.947827 valid_loss: 1.404498 valid_inte_loss: 1.404498 valid_speech_loss: 1.530894 valid_face_loss: 1.946640 valid_acc: 0.461628
+Epoch [55]/[100] train_loss: 1.485194 train_inte_loss: 1.485194 train_speech_loss: 1.588463 train_face_loss: 1.947957 valid_loss: 1.402937 valid_inte_loss: 1.402937 valid_speech_loss: 1.532939 valid_face_loss: 1.948031 valid_acc: 0.464935
+Epoch [56]/[100] train_loss: 1.483406 train_inte_loss: 1.483406 train_speech_loss: 1.586800 train_face_loss: 1.948065 valid_loss: 1.407976 valid_inte_loss: 1.407976 valid_speech_loss: 1.533673 valid_face_loss: 1.947511 valid_acc: 0.464172
+Epoch [57]/[100] train_loss: 1.481955 train_inte_loss: 1.481955 train_speech_loss: 1.585749 train_face_loss: 1.948034 valid_loss: 1.406352 valid_inte_loss: 1.406352 valid_speech_loss: 1.531402 valid_face_loss: 1.945726 valid_acc: 0.465988
+Epoch [58]/[100] train_loss: 1.481284 train_inte_loss: 1.481284 train_speech_loss: 1.591537 train_face_loss: 1.947947 valid_loss: 1.410852 valid_inte_loss: 1.410852 valid_speech_loss: 1.532810 valid_face_loss: 1.947469 valid_acc: 0.457485
+Epoch [59]/[100] train_loss: 1.476158 train_inte_loss: 1.476158 train_speech_loss: 1.586456 train_face_loss: 1.948448 valid_loss: 1.404105 valid_inte_loss: 1.404105 valid_speech_loss: 1.533666 valid_face_loss: 1.947404 valid_acc: 0.465443
+Epoch [60]/[100] train_loss: 1.481986 train_inte_loss: 1.481986 train_speech_loss: 1.591197 train_face_loss: 1.948512 valid_loss: 1.398042 valid_inte_loss: 1.398042 valid_speech_loss: 1.531706 valid_face_loss: 1.947919 valid_acc: 0.468714
+Epoch [61]/[100] train_loss: 1.478039 train_inte_loss: 1.478039 train_speech_loss: 1.591782 train_face_loss: 1.948452 valid_loss: 1.400331 valid_inte_loss: 1.400331 valid_speech_loss: 1.531114 valid_face_loss: 1.947485 valid_acc: 0.463445
+Epoch [62]/[100] train_loss: 1.476799 train_inte_loss: 1.476799 train_speech_loss: 1.589821 train_face_loss: 1.948502 valid_loss: 1.414897 valid_inte_loss: 1.414897 valid_speech_loss: 1.531671 valid_face_loss: 1.950322 valid_acc: 0.456904
+Epoch [63]/[100] train_loss: 1.478636 train_inte_loss: 1.478636 train_speech_loss: 1.591396 train_face_loss: 1.948659 valid_loss: 1.404242 valid_inte_loss: 1.404242 valid_speech_loss: 1.530888 valid_face_loss: 1.947697 valid_acc: 0.463445
+Epoch [64]/[100] train_loss: 1.477238 train_inte_loss: 1.477238 train_speech_loss: 1.591968 train_face_loss: 1.948455 valid_loss: 1.402396 valid_inte_loss: 1.402396 valid_speech_loss: 1.531092 valid_face_loss: 1.947098 valid_acc: 0.463808
+Epoch [65]/[100] train_loss: 1.475427 train_inte_loss: 1.475427 train_speech_loss: 1.587495 train_face_loss: 1.948688 valid_loss: 1.402904 valid_inte_loss: 1.402904 valid_speech_loss: 1.532029 valid_face_loss: 1.947755 valid_acc: 0.468350
+Epoch [66]/[100] train_loss: 1.477347 train_inte_loss: 1.477347 train_speech_loss: 1.592782 train_face_loss: 1.948626 valid_loss: 1.407619 valid_inte_loss: 1.407619 valid_speech_loss: 1.531558 valid_face_loss: 1.948373 valid_acc: 0.462028
+Epoch [67]/[100] train_loss: 1.479260 train_inte_loss: 1.479260 train_speech_loss: 1.594557 train_face_loss: 1.948958 valid_loss: 1.410102 valid_inte_loss: 1.410102 valid_speech_loss: 1.532186 valid_face_loss: 1.949274 valid_acc: 0.461410
+Epoch [68]/[100] train_loss: 1.472163 train_inte_loss: 1.472163 train_speech_loss: 1.592149 train_face_loss: 1.949006 valid_loss: 1.400222 valid_inte_loss: 1.400222 valid_speech_loss: 1.531273 valid_face_loss: 1.947906 valid_acc: 0.465298
+Epoch [69]/[100] train_loss: 1.474355 train_inte_loss: 1.474355 train_speech_loss: 1.592956 train_face_loss: 1.948957 valid_loss: 1.409302 valid_inte_loss: 1.409302 valid_speech_loss: 1.532842 valid_face_loss: 1.949688 valid_acc: 0.460211
+Epoch [70]/[100] train_loss: 1.471948 train_inte_loss: 1.471948 train_speech_loss: 1.592938 train_face_loss: 1.948839 valid_loss: 1.402573 valid_inte_loss: 1.402573 valid_speech_loss: 1.532362 valid_face_loss: 1.947844 valid_acc: 0.461810
+Epoch [71]/[100] train_loss: 1.470728 train_inte_loss: 1.470728 train_speech_loss: 1.593361 train_face_loss: 1.948830 valid_loss: 1.413766 valid_inte_loss: 1.413766 valid_speech_loss: 1.532084 valid_face_loss: 1.951773 valid_acc: 0.463118
+Epoch [72]/[100] train_loss: 1.469204 train_inte_loss: 1.469204 train_speech_loss: 1.591532 train_face_loss: 1.948678 valid_loss: 1.410793 valid_inte_loss: 1.410793 valid_speech_loss: 1.532829 valid_face_loss: 1.948973 valid_acc: 0.459484
+Epoch [73]/[100] train_loss: 1.468939 train_inte_loss: 1.468939 train_speech_loss: 1.592552 train_face_loss: 1.948852 valid_loss: 1.401311 valid_inte_loss: 1.401311 valid_speech_loss: 1.532988 valid_face_loss: 1.945966 valid_acc: 0.458176
+Epoch [74]/[100] train_loss: 1.467494 train_inte_loss: 1.467494 train_speech_loss: 1.591178 train_face_loss: 1.948422 valid_loss: 1.403817 valid_inte_loss: 1.403817 valid_speech_loss: 1.533639 valid_face_loss: 1.948517 valid_acc: 0.460574
+Epoch [75]/[100] train_loss: 1.468409 train_inte_loss: 1.468409 train_speech_loss: 1.592924 train_face_loss: 1.948502 valid_loss: 1.399849 valid_inte_loss: 1.399849 valid_speech_loss: 1.533377 valid_face_loss: 1.948351 valid_acc: 0.466352
+Epoch [76]/[100] train_loss: 1.467390 train_inte_loss: 1.467390 train_speech_loss: 1.593675 train_face_loss: 1.948750 valid_loss: 1.404004 valid_inte_loss: 1.404004 valid_speech_loss: 1.533026 valid_face_loss: 1.948301 valid_acc: 0.464208
+Epoch [77]/[100] train_loss: 1.463725 train_inte_loss: 1.463725 train_speech_loss: 1.591245 train_face_loss: 1.948602 valid_loss: 1.396850 valid_inte_loss: 1.396850 valid_speech_loss: 1.532700 valid_face_loss: 1.947562 valid_acc: 0.465661
+Epoch [78]/[100] train_loss: 1.462513 train_inte_loss: 1.462513 train_speech_loss: 1.591349 train_face_loss: 1.948797 valid_loss: 1.402246 valid_inte_loss: 1.402246 valid_speech_loss: 1.532744 valid_face_loss: 1.948215 valid_acc: 0.463481
+Epoch [79]/[100] train_loss: 1.463834 train_inte_loss: 1.463834 train_speech_loss: 1.594620 train_face_loss: 1.948274 valid_loss: 1.395492 valid_inte_loss: 1.395492 valid_speech_loss: 1.532844 valid_face_loss: 1.946026 valid_acc: 0.468350
+Epoch [80]/[100] train_loss: 1.465477 train_inte_loss: 1.465477 train_speech_loss: 1.596232 train_face_loss: 1.948302 valid_loss: 1.400503 valid_inte_loss: 1.400503 valid_speech_loss: 1.534558 valid_face_loss: 1.948443 valid_acc: 0.468169
+Epoch [81]/[100] train_loss: 1.463166 train_inte_loss: 1.463166 train_speech_loss: 1.593793 train_face_loss: 1.948348 valid_loss: 1.398471 valid_inte_loss: 1.398471 valid_speech_loss: 1.534198 valid_face_loss: 1.947445 valid_acc: 0.464535
+Epoch [82]/[100] train_loss: 1.460825 train_inte_loss: 1.460825 train_speech_loss: 1.592387 train_face_loss: 1.948397 valid_loss: 1.403440 valid_inte_loss: 1.403440 valid_speech_loss: 1.533327 valid_face_loss: 1.948839 valid_acc: 0.463081
+Epoch [83]/[100] train_loss: 1.461791 train_inte_loss: 1.461791 train_speech_loss: 1.593639 train_face_loss: 1.948181 valid_loss: 1.395497 valid_inte_loss: 1.395497 valid_speech_loss: 1.533114 valid_face_loss: 1.948310 valid_acc: 0.465988
+Epoch [84]/[100] train_loss: 1.458343 train_inte_loss: 1.458343 train_speech_loss: 1.591650 train_face_loss: 1.948337 valid_loss: 1.395265 valid_inte_loss: 1.395265 valid_speech_loss: 1.532881 valid_face_loss: 1.948034 valid_acc: 0.469622
+Epoch [85]/[100] train_loss: 1.458118 train_inte_loss: 1.458118 train_speech_loss: 1.592345 train_face_loss: 1.948222 valid_loss: 1.391083 valid_inte_loss: 1.391083 valid_speech_loss: 1.534036 valid_face_loss: 1.947534 valid_acc: 0.464026
+Epoch [86]/[100] train_loss: 1.459693 train_inte_loss: 1.459693 train_speech_loss: 1.595766 train_face_loss: 1.948122 valid_loss: 1.391283 valid_inte_loss: 1.391283 valid_speech_loss: 1.532291 valid_face_loss: 1.947226 valid_acc: 0.466206
+Epoch [87]/[100] train_loss: 1.457339 train_inte_loss: 1.457339 train_speech_loss: 1.593017 train_face_loss: 1.948130 valid_loss: 1.389342 valid_inte_loss: 1.389342 valid_speech_loss: 1.533412 valid_face_loss: 1.948443 valid_acc: 0.467660
+Epoch [88]/[100] train_loss: 1.456302 train_inte_loss: 1.456302 train_speech_loss: 1.592584 train_face_loss: 1.948269 valid_loss: 1.395138 valid_inte_loss: 1.395138 valid_speech_loss: 1.533576 valid_face_loss: 1.947627 valid_acc: 0.463299
+Epoch [89]/[100] train_loss: 1.455417 train_inte_loss: 1.455417 train_speech_loss: 1.592903 train_face_loss: 1.948281 valid_loss: 1.393273 valid_inte_loss: 1.393273 valid_speech_loss: 1.533652 valid_face_loss: 1.947320 valid_acc: 0.465116
+Loaded pretrained weights for efficientnet-b4
+Epoch [0]/[100] train_loss: 1.643247 train_inte_loss: 1.643247 train_speech_loss: 1.575615 train_face_loss: 1.948996 valid_loss: 1.527011 valid_inte_loss: 1.527011 valid_speech_loss: 1.536343 valid_face_loss: 1.950730 valid_acc: 0.419949
+Epoch [1]/[100] train_loss: 1.582623 train_inte_loss: 1.582623 train_speech_loss: 1.581163 train_face_loss: 1.949750 valid_loss: 1.473657 valid_inte_loss: 1.473657 valid_speech_loss: 1.542580 valid_face_loss: 1.951070 valid_acc: 0.440916
+Epoch [2]/[100] train_loss: 1.565294 train_inte_loss: 1.565294 train_speech_loss: 1.576817 train_face_loss: 1.950273 valid_loss: 1.491777 valid_inte_loss: 1.491777 valid_speech_loss: 1.538330 valid_face_loss: 1.951664 valid_acc: 0.438554
+Epoch [3]/[100] train_loss: 1.559156 train_inte_loss: 1.559156 train_speech_loss: 1.578327 train_face_loss: 1.949153 valid_loss: 1.481530 valid_inte_loss: 1.481530 valid_speech_loss: 1.537171 valid_face_loss: 1.941340 valid_acc: 0.434084
+Epoch [4]/[100] train_loss: 1.553987 train_inte_loss: 1.553987 train_speech_loss: 1.577728 train_face_loss: 1.949130 valid_loss: 1.476525 valid_inte_loss: 1.476525 valid_speech_loss: 1.534947 valid_face_loss: 1.946886 valid_acc: 0.434993
+Epoch [5]/[100] train_loss: 1.551920 train_inte_loss: 1.551920 train_speech_loss: 1.576099 train_face_loss: 1.949514 valid_loss: 1.467065 valid_inte_loss: 1.467065 valid_speech_loss: 1.530496 valid_face_loss: 1.950014 valid_acc: 0.435174
+Epoch [6]/[100] train_loss: 1.546072 train_inte_loss: 1.546072 train_speech_loss: 1.577320 train_face_loss: 1.948769 valid_loss: 1.472470 valid_inte_loss: 1.472470 valid_speech_loss: 1.531048 valid_face_loss: 1.947965 valid_acc: 0.436991
+Epoch [7]/[100] train_loss: 1.541063 train_inte_loss: 1.541063 train_speech_loss: 1.575170 train_face_loss: 1.949202 valid_loss: 1.445426 valid_inte_loss: 1.445426 valid_speech_loss: 1.531019 valid_face_loss: 1.948305 valid_acc: 0.451272
+Epoch [8]/[100] train_loss: 1.542336 train_inte_loss: 1.542336 train_speech_loss: 1.578361 train_face_loss: 1.948578 valid_loss: 1.474167 valid_inte_loss: 1.474167 valid_speech_loss: 1.529285 valid_face_loss: 1.955052 valid_acc: 0.450400
+Epoch [9]/[100] train_loss: 1.536766 train_inte_loss: 1.536766 train_speech_loss: 1.577974 train_face_loss: 1.948393 valid_loss: 1.450541 valid_inte_loss: 1.450541 valid_speech_loss: 1.526446 valid_face_loss: 1.945276 valid_acc: 0.445531
+Epoch [10]/[100] train_loss: 1.537003 train_inte_loss: 1.537003 train_speech_loss: 1.574170 train_face_loss: 1.948514 valid_loss: 1.461152 valid_inte_loss: 1.461152 valid_speech_loss: 1.527941 valid_face_loss: 1.950185 valid_acc: 0.451453
+Epoch [11]/[100] train_loss: 1.533783 train_inte_loss: 1.533783 train_speech_loss: 1.581115 train_face_loss: 1.947877 valid_loss: 1.451557 valid_inte_loss: 1.451557 valid_speech_loss: 1.525179 valid_face_loss: 1.945493 valid_acc: 0.453961
+Epoch [12]/[100] train_loss: 1.533883 train_inte_loss: 1.533883 train_speech_loss: 1.578737 train_face_loss: 1.948442 valid_loss: 1.446910 valid_inte_loss: 1.446910 valid_speech_loss: 1.530251 valid_face_loss: 1.953870 valid_acc: 0.452217
+Epoch [13]/[100] train_loss: 1.527225 train_inte_loss: 1.527225 train_speech_loss: 1.579122 train_face_loss: 1.948310 valid_loss: 1.456507 valid_inte_loss: 1.456507 valid_speech_loss: 1.527900 valid_face_loss: 1.945196 valid_acc: 0.443350
+Epoch [14]/[100] train_loss: 1.530005 train_inte_loss: 1.530005 train_speech_loss: 1.580463 train_face_loss: 1.948554 valid_loss: 1.454937 valid_inte_loss: 1.454937 valid_speech_loss: 1.532157 valid_face_loss: 1.949430 valid_acc: 0.453852
+Epoch [15]/[100] train_loss: 1.528741 train_inte_loss: 1.528741 train_speech_loss: 1.580532 train_face_loss: 1.947946 valid_loss: 1.463109 valid_inte_loss: 1.463109 valid_speech_loss: 1.531600 valid_face_loss: 1.947894 valid_acc: 0.447529
+Epoch [16]/[100] train_loss: 1.525523 train_inte_loss: 1.525523 train_speech_loss: 1.578194 train_face_loss: 1.948042 valid_loss: 1.428773 valid_inte_loss: 1.428773 valid_speech_loss: 1.527755 valid_face_loss: 1.948264 valid_acc: 0.459993
+Epoch [17]/[100] train_loss: 1.524923 train_inte_loss: 1.524923 train_speech_loss: 1.580545 train_face_loss: 1.948689 valid_loss: 1.441404 valid_inte_loss: 1.441404 valid_speech_loss: 1.530347 valid_face_loss: 1.950811 valid_acc: 0.451344
+Epoch [18]/[100] train_loss: 1.525950 train_inte_loss: 1.525950 train_speech_loss: 1.583092 train_face_loss: 1.948756 valid_loss: 1.467906 valid_inte_loss: 1.467906 valid_speech_loss: 1.528664 valid_face_loss: 1.949576 valid_acc: 0.447456
+Epoch [19]/[100] train_loss: 1.523620 train_inte_loss: 1.523620 train_speech_loss: 1.583105 train_face_loss: 1.948486 valid_loss: 1.444646 valid_inte_loss: 1.444646 valid_speech_loss: 1.528626 valid_face_loss: 1.951252 valid_acc: 0.452507
+Epoch [20]/[100] train_loss: 1.516527 train_inte_loss: 1.516527 train_speech_loss: 1.582097 train_face_loss: 1.948662 valid_loss: 1.439597 valid_inte_loss: 1.439597 valid_speech_loss: 1.531253 valid_face_loss: 1.948681 valid_acc: 0.450363
+Epoch [21]/[100] train_loss: 1.521173 train_inte_loss: 1.521173 train_speech_loss: 1.579516 train_face_loss: 1.948620 valid_loss: 1.438030 valid_inte_loss: 1.438030 valid_speech_loss: 1.531035 valid_face_loss: 1.947846 valid_acc: 0.454215
+Epoch [22]/[100] train_loss: 1.515169 train_inte_loss: 1.515169 train_speech_loss: 1.580034 train_face_loss: 1.948283 valid_loss: 1.452595 valid_inte_loss: 1.452595 valid_speech_loss: 1.531030 valid_face_loss: 1.947691 valid_acc: 0.443169
+Epoch [23]/[100] train_loss: 1.520454 train_inte_loss: 1.520454 train_speech_loss: 1.583073 train_face_loss: 1.948544 valid_loss: 1.422485 valid_inte_loss: 1.422485 valid_speech_loss: 1.529464 valid_face_loss: 1.951575 valid_acc: 0.464353
+Epoch [24]/[100] train_loss: 1.516039 train_inte_loss: 1.516039 train_speech_loss: 1.581029 train_face_loss: 1.948957 valid_loss: 1.434152 valid_inte_loss: 1.434152 valid_speech_loss: 1.529829 valid_face_loss: 1.947851 valid_acc: 0.455124
+Epoch [25]/[100] train_loss: 1.512363 train_inte_loss: 1.512363 train_speech_loss: 1.581538 train_face_loss: 1.948106 valid_loss: 1.431145 valid_inte_loss: 1.431145 valid_speech_loss: 1.530496 valid_face_loss: 1.946707 valid_acc: 0.452580
+Epoch [26]/[100] train_loss: 1.518015 train_inte_loss: 1.518015 train_speech_loss: 1.586516 train_face_loss: 1.948694 valid_loss: 1.448980 valid_inte_loss: 1.448980 valid_speech_loss: 1.529713 valid_face_loss: 1.948483 valid_acc: 0.451126
+Epoch [27]/[100] train_loss: 1.512701 train_inte_loss: 1.512701 train_speech_loss: 1.584492 train_face_loss: 1.948441 valid_loss: 1.446223 valid_inte_loss: 1.446223 valid_speech_loss: 1.532248 valid_face_loss: 1.945838 valid_acc: 0.451672
+Epoch [28]/[100] train_loss: 1.514903 train_inte_loss: 1.514903 train_speech_loss: 1.584240 train_face_loss: 1.948303 valid_loss: 1.450220 valid_inte_loss: 1.450220 valid_speech_loss: 1.535969 valid_face_loss: 1.947602 valid_acc: 0.453125
+Epoch [29]/[100] train_loss: 1.512294 train_inte_loss: 1.512294 train_speech_loss: 1.587677 train_face_loss: 1.947975 valid_loss: 1.427193 valid_inte_loss: 1.427193 valid_speech_loss: 1.531038 valid_face_loss: 1.948588 valid_acc: 0.457849
+Epoch [30]/[100] train_loss: 1.506897 train_inte_loss: 1.506897 train_speech_loss: 1.583897 train_face_loss: 1.948501 valid_loss: 1.464626 valid_inte_loss: 1.464626 valid_speech_loss: 1.531790 valid_face_loss: 1.949607 valid_acc: 0.451308
+Epoch [31]/[100] train_loss: 1.506278 train_inte_loss: 1.506278 train_speech_loss: 1.583608 train_face_loss: 1.949090 valid_loss: 1.436717 valid_inte_loss: 1.436717 valid_speech_loss: 1.530912 valid_face_loss: 1.950073 valid_acc: 0.449818
+Epoch [32]/[100] train_loss: 1.509980 train_inte_loss: 1.509980 train_speech_loss: 1.586382 train_face_loss: 1.948608 valid_loss: 1.439669 valid_inte_loss: 1.439669 valid_speech_loss: 1.531103 valid_face_loss: 1.950706 valid_acc: 0.454942
+Epoch [33]/[100] train_loss: 1.507309 train_inte_loss: 1.507309 train_speech_loss: 1.583410 train_face_loss: 1.948807 valid_loss: 1.421559 valid_inte_loss: 1.421559 valid_speech_loss: 1.531870 valid_face_loss: 1.945890 valid_acc: 0.452071
+Epoch [34]/[100] train_loss: 1.506188 train_inte_loss: 1.506188 train_speech_loss: 1.586821 train_face_loss: 1.948691 valid_loss: 1.443953 valid_inte_loss: 1.443953 valid_speech_loss: 1.528944 valid_face_loss: 1.949674 valid_acc: 0.455814
+Epoch [35]/[100] train_loss: 1.502532 train_inte_loss: 1.502532 train_speech_loss: 1.581727 train_face_loss: 1.948679 valid_loss: 1.422319 valid_inte_loss: 1.422319 valid_speech_loss: 1.531391 valid_face_loss: 1.950766 valid_acc: 0.458212
+Epoch [36]/[100] train_loss: 1.512220 train_inte_loss: 1.512220 train_speech_loss: 1.590129 train_face_loss: 1.949391 valid_loss: 1.415795 valid_inte_loss: 1.415795 valid_speech_loss: 1.528831 valid_face_loss: 1.951878 valid_acc: 0.464717
+Epoch [37]/[100] train_loss: 1.501925 train_inte_loss: 1.501925 train_speech_loss: 1.585898 train_face_loss: 1.948493 valid_loss: 1.424370 valid_inte_loss: 1.424370 valid_speech_loss: 1.527633 valid_face_loss: 1.948370 valid_acc: 0.457304
+Epoch [38]/[100] train_loss: 1.500436 train_inte_loss: 1.500436 train_speech_loss: 1.587841 train_face_loss: 1.948622 valid_loss: 1.420283 valid_inte_loss: 1.420283 valid_speech_loss: 1.529833 valid_face_loss: 1.949459 valid_acc: 0.465952
+Epoch [39]/[100] train_loss: 1.501350 train_inte_loss: 1.501350 train_speech_loss: 1.586023 train_face_loss: 1.948666 valid_loss: 1.428086 valid_inte_loss: 1.428086 valid_speech_loss: 1.528814 valid_face_loss: 1.948432 valid_acc: 0.454542
+Epoch [40]/[100] train_loss: 1.497702 train_inte_loss: 1.497702 train_speech_loss: 1.585572 train_face_loss: 1.949328 valid_loss: 1.416829 valid_inte_loss: 1.416829 valid_speech_loss: 1.533463 valid_face_loss: 1.950313 valid_acc: 0.463844
+Epoch [41]/[100] train_loss: 1.497571 train_inte_loss: 1.497571 train_speech_loss: 1.586302 train_face_loss: 1.948963 valid_loss: 1.415454 valid_inte_loss: 1.415454 valid_speech_loss: 1.532246 valid_face_loss: 1.949219 valid_acc: 0.460538
+Epoch [42]/[100] train_loss: 1.498224 train_inte_loss: 1.498224 train_speech_loss: 1.585433 train_face_loss: 1.949027 valid_loss: 1.431995 valid_inte_loss: 1.431995 valid_speech_loss: 1.533165 valid_face_loss: 1.946656 valid_acc: 0.449891
+Epoch [43]/[100] train_loss: 1.495475 train_inte_loss: 1.495475 train_speech_loss: 1.586718 train_face_loss: 1.949057 valid_loss: 1.421660 valid_inte_loss: 1.421660 valid_speech_loss: 1.534254 valid_face_loss: 1.950153 valid_acc: 0.460392
+Epoch [44]/[100] train_loss: 1.499853 train_inte_loss: 1.499853 train_speech_loss: 1.588438 train_face_loss: 1.949159 valid_loss: 1.427393 valid_inte_loss: 1.427393 valid_speech_loss: 1.529526 valid_face_loss: 1.948906 valid_acc: 0.459956
+Epoch [45]/[100] train_loss: 1.496652 train_inte_loss: 1.496652 train_speech_loss: 1.588113 train_face_loss: 1.949470 valid_loss: 1.449207 valid_inte_loss: 1.449207 valid_speech_loss: 1.532185 valid_face_loss: 1.949338 valid_acc: 0.451308
+Epoch [46]/[100] train_loss: 1.491448 train_inte_loss: 1.491448 train_speech_loss: 1.584320 train_face_loss: 1.949442 valid_loss: 1.423845 valid_inte_loss: 1.423845 valid_speech_loss: 1.532092 valid_face_loss: 1.953421 valid_acc: 0.462028
+Epoch [47]/[100] train_loss: 1.492107 train_inte_loss: 1.492107 train_speech_loss: 1.588350 train_face_loss: 1.949374 valid_loss: 1.435060 valid_inte_loss: 1.435060 valid_speech_loss: 1.534023 valid_face_loss: 1.945101 valid_acc: 0.461810
+Epoch [48]/[100] train_loss: 1.491745 train_inte_loss: 1.491745 train_speech_loss: 1.588035 train_face_loss: 1.949730 valid_loss: 1.417385 valid_inte_loss: 1.417385 valid_speech_loss: 1.533916 valid_face_loss: 1.951171 valid_acc: 0.459811
+Epoch [49]/[100] train_loss: 1.490005 train_inte_loss: 1.490005 train_speech_loss: 1.588272 train_face_loss: 1.949937 valid_loss: 1.409689 valid_inte_loss: 1.409689 valid_speech_loss: 1.531022 valid_face_loss: 1.950536 valid_acc: 0.464571
+Epoch [50]/[100] train_loss: 1.490885 train_inte_loss: 1.490885 train_speech_loss: 1.587749 train_face_loss: 1.950123 valid_loss: 1.407105 valid_inte_loss: 1.407105 valid_speech_loss: 1.531723 valid_face_loss: 1.949981 valid_acc: 0.461810
+Epoch [51]/[100] train_loss: 1.489686 train_inte_loss: 1.489686 train_speech_loss: 1.587908 train_face_loss: 1.949901 valid_loss: 1.417328 valid_inte_loss: 1.417328 valid_speech_loss: 1.531873 valid_face_loss: 1.950111 valid_acc: 0.459302
+Epoch [52]/[100] train_loss: 1.485754 train_inte_loss: 1.485754 train_speech_loss: 1.583951 train_face_loss: 1.949938 valid_loss: 1.421720 valid_inte_loss: 1.421720 valid_speech_loss: 1.533491 valid_face_loss: 1.949646 valid_acc: 0.453670
+Epoch [53]/[100] train_loss: 1.483726 train_inte_loss: 1.483726 train_speech_loss: 1.586160 train_face_loss: 1.950337 valid_loss: 1.408574 valid_inte_loss: 1.408574 valid_speech_loss: 1.533796 valid_face_loss: 1.950191 valid_acc: 0.464353
+Epoch [54]/[100] train_loss: 1.487787 train_inte_loss: 1.487787 train_speech_loss: 1.588576 train_face_loss: 1.950294 valid_loss: 1.404034 valid_inte_loss: 1.404034 valid_speech_loss: 1.531025 valid_face_loss: 1.950323 valid_acc: 0.464172
+Epoch [55]/[100] train_loss: 1.485617 train_inte_loss: 1.485617 train_speech_loss: 1.588061 train_face_loss: 1.950189 valid_loss: 1.401007 valid_inte_loss: 1.401007 valid_speech_loss: 1.534533 valid_face_loss: 1.950811 valid_acc: 0.467842
+Epoch [56]/[100] train_loss: 1.483165 train_inte_loss: 1.483165 train_speech_loss: 1.587093 train_face_loss: 1.950114 valid_loss: 1.404234 valid_inte_loss: 1.404234 valid_speech_loss: 1.533812 valid_face_loss: 1.950722 valid_acc: 0.463081
+Epoch [57]/[100] train_loss: 1.481940 train_inte_loss: 1.481940 train_speech_loss: 1.586117 train_face_loss: 1.950978 valid_loss: 1.408260 valid_inte_loss: 1.408260 valid_speech_loss: 1.531864 valid_face_loss: 1.952060 valid_acc: 0.463481
+Epoch [58]/[100] train_loss: 1.481831 train_inte_loss: 1.481831 train_speech_loss: 1.591762 train_face_loss: 1.951072 valid_loss: 1.417635 valid_inte_loss: 1.417635 valid_speech_loss: 1.532593 valid_face_loss: 1.954232 valid_acc: 0.456759
+Epoch [59]/[100] train_loss: 1.476202 train_inte_loss: 1.476202 train_speech_loss: 1.586272 train_face_loss: 1.950717 valid_loss: 1.402853 valid_inte_loss: 1.402853 valid_speech_loss: 1.534772 valid_face_loss: 1.949658 valid_acc: 0.466352
+Epoch [60]/[100] train_loss: 1.481679 train_inte_loss: 1.481679 train_speech_loss: 1.590751 train_face_loss: 1.950666 valid_loss: 1.395311 valid_inte_loss: 1.395311 valid_speech_loss: 1.532335 valid_face_loss: 1.949724 valid_acc: 0.466897
+Epoch [61]/[100] train_loss: 1.478693 train_inte_loss: 1.478693 train_speech_loss: 1.591646 train_face_loss: 1.950310 valid_loss: 1.400091 valid_inte_loss: 1.400091 valid_speech_loss: 1.531640 valid_face_loss: 1.951267 valid_acc: 0.460356
+Epoch [62]/[100] train_loss: 1.477220 train_inte_loss: 1.477220 train_speech_loss: 1.589719 train_face_loss: 1.950593 valid_loss: 1.416435 valid_inte_loss: 1.416435 valid_speech_loss: 1.531931 valid_face_loss: 1.951195 valid_acc: 0.457086
+Epoch [63]/[100] train_loss: 1.478212 train_inte_loss: 1.478212 train_speech_loss: 1.591136 train_face_loss: 1.950854 valid_loss: 1.402356 valid_inte_loss: 1.402356 valid_speech_loss: 1.530785 valid_face_loss: 1.950087 valid_acc: 0.469222
+Epoch [64]/[100] train_loss: 1.477251 train_inte_loss: 1.477251 train_speech_loss: 1.591595 train_face_loss: 1.950400 valid_loss: 1.402371 valid_inte_loss: 1.402371 valid_speech_loss: 1.531635 valid_face_loss: 1.950035 valid_acc: 0.463808
+Epoch [65]/[100] train_loss: 1.474558 train_inte_loss: 1.474558 train_speech_loss: 1.587024 train_face_loss: 1.950588 valid_loss: 1.400646 valid_inte_loss: 1.400646 valid_speech_loss: 1.532716 valid_face_loss: 1.952287 valid_acc: 0.467260
+Epoch [66]/[100] train_loss: 1.477147 train_inte_loss: 1.477147 train_speech_loss: 1.592607 train_face_loss: 1.951060 valid_loss: 1.405494 valid_inte_loss: 1.405494 valid_speech_loss: 1.532442 valid_face_loss: 1.957896 valid_acc: 0.465843
+Epoch [67]/[100] train_loss: 1.478868 train_inte_loss: 1.478868 train_speech_loss: 1.594260 train_face_loss: 1.951074 valid_loss: 1.408544 valid_inte_loss: 1.408544 valid_speech_loss: 1.533013 valid_face_loss: 1.951984 valid_acc: 0.461446
+Epoch [68]/[100] train_loss: 1.472219 train_inte_loss: 1.472219 train_speech_loss: 1.592059 train_face_loss: 1.950679 valid_loss: 1.398211 valid_inte_loss: 1.398211 valid_speech_loss: 1.531678 valid_face_loss: 1.950576 valid_acc: 0.469477
+Epoch [69]/[100] train_loss: 1.474753 train_inte_loss: 1.474753 train_speech_loss: 1.592738 train_face_loss: 1.950678 valid_loss: 1.410943 valid_inte_loss: 1.410943 valid_speech_loss: 1.532472 valid_face_loss: 1.950872 valid_acc: 0.460938
+Epoch [70]/[100] train_loss: 1.472056 train_inte_loss: 1.472056 train_speech_loss: 1.592969 train_face_loss: 1.950968 valid_loss: 1.403664 valid_inte_loss: 1.403664 valid_speech_loss: 1.532717 valid_face_loss: 1.951488 valid_acc: 0.460392
+Epoch [71]/[100] train_loss: 1.470541 train_inte_loss: 1.470541 train_speech_loss: 1.593389 train_face_loss: 1.950989 valid_loss: 1.407324 valid_inte_loss: 1.407324 valid_speech_loss: 1.533206 valid_face_loss: 1.952380 valid_acc: 0.465298
+Epoch [72]/[100] train_loss: 1.469540 train_inte_loss: 1.469540 train_speech_loss: 1.591543 train_face_loss: 1.951099 valid_loss: 1.403895 valid_inte_loss: 1.403895 valid_speech_loss: 1.533807 valid_face_loss: 1.952074 valid_acc: 0.465443
+Epoch [73]/[100] train_loss: 1.469377 train_inte_loss: 1.469377 train_speech_loss: 1.592827 train_face_loss: 1.951069 valid_loss: 1.399759 valid_inte_loss: 1.399759 valid_speech_loss: 1.533494 valid_face_loss: 1.952536 valid_acc: 0.462173
+Epoch [74]/[100] train_loss: 1.467949 train_inte_loss: 1.467949 train_speech_loss: 1.590978 train_face_loss: 1.951040 valid_loss: 1.401907 valid_inte_loss: 1.401907 valid_speech_loss: 1.534375 valid_face_loss: 1.949702 valid_acc: 0.467078
+Epoch [75]/[100] train_loss: 1.469295 train_inte_loss: 1.469295 train_speech_loss: 1.592686 train_face_loss: 1.950719 valid_loss: 1.398280 valid_inte_loss: 1.398280 valid_speech_loss: 1.534049 valid_face_loss: 1.949429 valid_acc: 0.466352
+Epoch [76]/[100] train_loss: 1.467967 train_inte_loss: 1.467967 train_speech_loss: 1.593414 train_face_loss: 1.950873 valid_loss: 1.404431 valid_inte_loss: 1.404431 valid_speech_loss: 1.533570 valid_face_loss: 1.951489 valid_acc: 0.465298
+Epoch [77]/[100] train_loss: 1.464923 train_inte_loss: 1.464923 train_speech_loss: 1.590982 train_face_loss: 1.950728 valid_loss: 1.396396 valid_inte_loss: 1.396396 valid_speech_loss: 1.533284 valid_face_loss: 1.950501 valid_acc: 0.466388
+Epoch [78]/[100] train_loss: 1.463584 train_inte_loss: 1.463584 train_speech_loss: 1.591321 train_face_loss: 1.950875 valid_loss: 1.400792 valid_inte_loss: 1.400792 valid_speech_loss: 1.533039 valid_face_loss: 1.951029 valid_acc: 0.466388
+Epoch [79]/[100] train_loss: 1.464835 train_inte_loss: 1.464835 train_speech_loss: 1.594159 train_face_loss: 1.951068 valid_loss: 1.394796 valid_inte_loss: 1.394796 valid_speech_loss: 1.532987 valid_face_loss: 1.950864 valid_acc: 0.467805
+Epoch [80]/[100] train_loss: 1.467138 train_inte_loss: 1.467138 train_speech_loss: 1.595719 train_face_loss: 1.950779 valid_loss: 1.398733 valid_inte_loss: 1.398733 valid_speech_loss: 1.534612 valid_face_loss: 1.951824 valid_acc: 0.468169
+Epoch [81]/[100] train_loss: 1.464462 train_inte_loss: 1.464462 train_speech_loss: 1.593256 train_face_loss: 1.950743 valid_loss: 1.398460 valid_inte_loss: 1.398460 valid_speech_loss: 1.534166 valid_face_loss: 1.951338 valid_acc: 0.466533
+Epoch [82]/[100] train_loss: 1.462557 train_inte_loss: 1.462557 train_speech_loss: 1.591970 train_face_loss: 1.950862 valid_loss: 1.403476 valid_inte_loss: 1.403476 valid_speech_loss: 1.533337 valid_face_loss: 1.950877 valid_acc: 0.464353
+Epoch [83]/[100] train_loss: 1.464100 train_inte_loss: 1.464100 train_speech_loss: 1.592955 train_face_loss: 1.950944 valid_loss: 1.394243 valid_inte_loss: 1.394243 valid_speech_loss: 1.533285 valid_face_loss: 1.951498 valid_acc: 0.467078
+Epoch [84]/[100] train_loss: 1.460649 train_inte_loss: 1.460649 train_speech_loss: 1.591059 train_face_loss: 1.950957 valid_loss: 1.397835 valid_inte_loss: 1.397835 valid_speech_loss: 1.532952 valid_face_loss: 1.951098 valid_acc: 0.470167
+Epoch [85]/[100] train_loss: 1.460374 train_inte_loss: 1.460374 train_speech_loss: 1.591776 train_face_loss: 1.950939 valid_loss: 1.391472 valid_inte_loss: 1.391472 valid_speech_loss: 1.533831 valid_face_loss: 1.951237 valid_acc: 0.467478
+Epoch [86]/[100] train_loss: 1.462062 train_inte_loss: 1.462062 train_speech_loss: 1.594841 train_face_loss: 1.951082 valid_loss: 1.392896 valid_inte_loss: 1.392896 valid_speech_loss: 1.532323 valid_face_loss: 1.950702 valid_acc: 0.470712
+Epoch [87]/[100] train_loss: 1.460143 train_inte_loss: 1.460143 train_speech_loss: 1.592255 train_face_loss: 1.951054 valid_loss: 1.390385 valid_inte_loss: 1.390385 valid_speech_loss: 1.533452 valid_face_loss: 1.951198 valid_acc: 0.469985
+Epoch [88]/[100] train_loss: 1.458928 train_inte_loss: 1.458928 train_speech_loss: 1.592042 train_face_loss: 1.951336 valid_loss: 1.395765 valid_inte_loss: 1.395765 valid_speech_loss: 1.533544 valid_face_loss: 1.950719 valid_acc: 0.462936
+Epoch [89]/[100] train_loss: 1.458270 train_inte_loss: 1.458270 train_speech_loss: 1.592024 train_face_loss: 1.951263 valid_loss: 1.394521 valid_inte_loss: 1.394521 valid_speech_loss: 1.533689 valid_face_loss: 1.951422 valid_acc: 0.469804
+Epoch [90]/[100] train_loss: 1.459452 train_inte_loss: 1.459452 train_speech_loss: 1.594134 train_face_loss: 1.951576 valid_loss: 1.392078 valid_inte_loss: 1.392078 valid_speech_loss: 1.533554 valid_face_loss: 1.951802 valid_acc: 0.472166
+Epoch [91]/[100] train_loss: 1.458716 train_inte_loss: 1.458716 train_speech_loss: 1.594381 train_face_loss: 1.951668 valid_loss: 1.394883 valid_inte_loss: 1.394883 valid_speech_loss: 1.534670 valid_face_loss: 1.951476 valid_acc: 0.463481
+Epoch [92]/[100] train_loss: 1.458981 train_inte_loss: 1.458981 train_speech_loss: 1.596087 train_face_loss: 1.951841 valid_loss: 1.393884 valid_inte_loss: 1.393884 valid_speech_loss: 1.534459 valid_face_loss: 1.952059 valid_acc: 0.466206
+Epoch [93]/[100] train_loss: 1.457009 train_inte_loss: 1.457009 train_speech_loss: 1.593328 train_face_loss: 1.951885 valid_loss: 1.394994 valid_inte_loss: 1.394994 valid_speech_loss: 1.533604 valid_face_loss: 1.952323 valid_acc: 0.466933
+Epoch [94]/[100] train_loss: 1.454832 train_inte_loss: 1.454832 train_speech_loss: 1.591667 train_face_loss: 1.952060 valid_loss: 1.392081 valid_inte_loss: 1.392081 valid_speech_loss: 1.533793 valid_face_loss: 1.952511 valid_acc: 0.470349
+Epoch [95]/[100] train_loss: 1.453501 train_inte_loss: 1.453501 train_speech_loss: 1.594070 train_face_loss: 1.952161 valid_loss: 1.392753 valid_inte_loss: 1.392753 valid_speech_loss: 1.533637 valid_face_loss: 1.952325 valid_acc: 0.467842
+Epoch [96]/[100] train_loss: 1.456601 train_inte_loss: 1.456601 train_speech_loss: 1.594903 train_face_loss: 1.952118 valid_loss: 1.392036 valid_inte_loss: 1.392036 valid_speech_loss: 1.533747 valid_face_loss: 1.952330 valid_acc: 0.466025
+Epoch [97]/[100] train_loss: 1.455829 train_inte_loss: 1.455829 train_speech_loss: 1.596485 train_face_loss: 1.952230 valid_loss: 1.392064 valid_inte_loss: 1.392064 valid_speech_loss: 1.534130 valid_face_loss: 1.952477 valid_acc: 0.466388
+Epoch [98]/[100] train_loss: 1.452240 train_inte_loss: 1.452240 train_speech_loss: 1.591189 train_face_loss: 1.952263 valid_loss: 1.392694 valid_inte_loss: 1.392694 valid_speech_loss: 1.533954 valid_face_loss: 1.952506 valid_acc: 0.466751
+Epoch [99]/[100] train_loss: 1.454747 train_inte_loss: 1.454747 train_speech_loss: 1.595724 train_face_loss: 1.952200 valid_loss: 1.392028 valid_inte_loss: 1.392028 valid_speech_loss: 1.533700 valid_face_loss: 1.952484 valid_acc: 0.467660

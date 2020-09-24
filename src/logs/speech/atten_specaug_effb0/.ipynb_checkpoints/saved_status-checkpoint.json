@@ -1,0 +1,1 @@
+{"mode": "speech", "exp_name": "atten_specaug_effb0", "learning_rate": 0.004, "batch_size": 256, "n_epoch": 100, "optim": "adamw", "weight_decay": 5e-05, "num_workers": 16, "warmup": 3, "load_weights": null, "coeff": 0, "mixup_prob": 1.0, "mixup_alpha": 1.0, "label_smoothing": 0.1, "amp": false, "load_json": null}

@@ -102,13 +102,13 @@ class attention_bilstm(nn.Module):
         self.attention = Attention(dimensions = 2*hidden_size)
         self.out = nn.Linear(2*hidden_size,num_classes)
     def forward(self,x,extract_feature = False):
-        # x : B, F, T
+        # x : B, T, F
         self.encoder.flatten_parameters()
-        output,hidden = self.encoder(x.transpose(1,2)) ## B,F,T -> B,T,F -> B,T,self.hidden_size * 2
+        output,hidden = self.encoder(x) ## B,T,F -> B,T,self.hidden_size * 2
         query = hidden[0].transpose(0,1).reshape(-1,1,2*self.hidden_size) # B,1,2H
         output, _ = self.attention(query,output)
-        output = output.squeeze(1)
+        feature = output.squeeze(1) ## B,2H
+        out = self.out(feature)
         if extract_feature:
-            return output
-        output = self.out(output)
-        return output
+            return out,feature
+        return out

@@ -5,6 +5,7 @@ import cv2
 import os
 import numpy as np
 import scipy
+import shutil
 
 from facenet_pytorch import MTCNN, InceptionResnetV1
 from tqdm import tqdm
@@ -175,7 +176,13 @@ def process_feature_embedding(config):
             out = embedding_net(inp)
         out = out.cpu().detach().numpy()
         np.save(config.SAVE_DIR + 'video_embedding/' + file, out)
-        
+
+def process_text_embedding(config):
+    os.makedirs(config.SAVE_DIR + 'text/', exist_ok = True)
+    files = [file for file in os.listdir(config.FILE_DIR) if file.endswith('.npz')]
+    for file in tqdm(files):
+        shutil.copy(os.path.join(config.FILE_DIR, file), os.path.join(config.SAVE_DIR + 'text/',file))
+    
 if __name__ == '__main__':
     print("..processing train data")
     process(train_config)
@@ -194,3 +201,12 @@ if __name__ == '__main__':
 
     print(".. feature processing test data")
     process_feature_embedding(test_config)
+    
+    print(".. text processing train data")
+    process_text_embedding(train_config)
+
+    print(".. text processing valid data")
+    process_text_embedding(val_config)
+
+    print(".. text processing test data")
+    process_text_embedding(test_config)

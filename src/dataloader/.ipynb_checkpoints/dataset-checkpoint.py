@@ -1,7 +1,7 @@
 from utils.utils import *
 from utils.SpecAugment import spec_augment_pytorch
 from torch.utils import data
-from .transform import get_speech_transform, get_face_transform
+from .transform import get_speech_transform, get_face_transform, get_text_transform
 
 seed_everything(42)
 label2emo={'hap':0,'ang':1,'dis':2,'fea':3,'sad':4,'neu':5,'sur':6}
@@ -30,7 +30,7 @@ def parse_label(fileName,smooth_weight):
     return inte_label, face_label, speech_label
     
 class Dataset(data.Dataset):
-    def __init__(self,speech_root_dir= None,video_root_dir= None,text_root_dir = None, file_list= None, label_smoothing = 0,is_train=True):
+    def __init__(self,speech_root_dir= None,video_root_dir= None,text_root_dir = None, file_list= None, label_smoothing = 0,is_train=True,is_test=False):
         self.file_list = file_list
         self.speech_root_dir = speech_root_dir
         self.text_root_dir = text_root_dir
@@ -38,17 +38,22 @@ class Dataset(data.Dataset):
         
         self.smooth_weight = label_smoothing
         self.is_train=is_train
+        self.is_test = is_test
         self.speech_transform = get_speech_transform(is_train)
         self.face_transform = get_face_transform(is_train)
+        self.text_transform = get_text_transform(is_train)
     def __len__(self):
         return len(self.file_list)
     def __getitem__(self,idx):
         ## label load and preprocess
         fileName = self.file_list[idx]
-        inte_label, face_label, speech_label = parse_label(fileName,self.smooth_weight)
         
-        ## input load and preprocess
-        data = {'inte_label' : torch.from_numpy(inte_label),'speech_label' : torch.from_numpy(speech_label),'face_label' : torch.from_numpy(face_label)}
+        data = {}
+        if not self.is_test:
+            inte_label, face_label, speech_label = parse_label(fileName,self.smooth_weight)
+
+            ## input load and preprocess
+            data = {'inte_label' : torch.from_numpy(inte_label),'speech_label' : torch.from_numpy(speech_label),'face_label' : torch.from_numpy(face_label)}
         
         ## load speech
         if self.speech_root_dir is not None:
@@ -57,17 +62,18 @@ class Dataset(data.Dataset):
             yS = np.rollaxis(yS,-1,0) # 1,F,T
             yS = torch.from_numpy(yS)
             if self.is_train:
-                yS = spec_augment_pytorch.spec_augment(mel_spectrogram = yS, time_warping_para=120, frequency_masking_para=27,
+                yS = spec_augment_pytorch.spec_augment(mel_spectrogram = yS, time_warping_para=80, frequency_masking_para=27,
                      time_masking_para=50, frequency_mask_num=3, time_mask_num=4)
             data['speech'] = yS
         if self.video_root_dir is not None:
             face = np.load(os.path.join(self.video_root_dir,fileName)).astype('float32')[...,np.newaxis] ## T, F,1 
-            face = self.face_transform(image = face)['image'] # -> 여기도 패딩을 넣어줘야한다.
-            face = np.rollaxis(face,-1,0) # 1,T,F
-            data['face'] = torch.from_numpy(face).transpose(1,2) ## 1,F,T
+            face = self.face_transform(image = face)['image'][...,0] # -> 여기도 패딩을 넣어줘야한다.
+            data['face'] = torch.from_numpy(face) ##T,F
         
         if self.text_root_dir is not None:
-            text = np.load(os.path.join(self.text_root_dir,fileName)).astype('float32')
-            data['text'] = torch.from_numpy(text)
-           
+            text_fileName = fileName.split('-')[0]+'.npz'
+            text = np.load(os.path.join(self.text_root_dir,text_fileName))['word_embed'].astype('float32')[...,np.newaxis] # T,dim,1
+            text = self.text_transform(image = text)['image'][...,0]
+            data['text'] = torch.from_numpy(text) # T,dim
+            
         return data
