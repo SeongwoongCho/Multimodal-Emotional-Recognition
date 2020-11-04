@@ -37,20 +37,30 @@
     - attentioned-pooling : multi-modal case의 경우 aligned pooling을 수행..! attention-encoder-decoder 모델을 활용
     - multitask-learning vs transfer-learning
 
-# CMD
-1. python3 preprocess.py        
-2. python train.py --mode speech --exp_name baseline --learning_rate 4e-3 --batch_size 256 --n_epoch 100 --optim adamw --warmup 1 --weight_decay 1e-5 --num_workers 16 --coeff 0 --mixup_prob 1 --mixup_alpha 1 --label_smoothing 0.1 --amp False >> logs.txt
-3. python3 train.py --mode multimodal --pretrained_speech --pretrained_face --freeze_head True
+# How to start
 
-## requirements
+```
+1. python3 preprocess.py
 
-liborsa
-moviepy
-pytorch
-opencv
-numpy
-scipy
+2-1. python train.py --mode speech --exp_name vanila_effb4 --learning_rate 4e-3 --batch_size 128 --n_epoch 100 --optim adamw --warmup 3 --weight_decay 5e-5 --num_workers 16 --coeff 4 --mixup_prob 1 --mixup_alpha 1 --label_smoothing 0.1 --amp False >> logs.txt
 
-facenet_pytorch
-tqdm
-albumentations
+2-2. python train.py --mode text --exp_name attn_lstm --learning_rate 4e-3 --batch_size 256 --n_epoch 100 --optim adamw --warmup 3 --weight_decay 5e-5 --num_workers 16 --label_smoothing 0.1 --amp False >> logs.txt
+
+2-3. python train.py --mode face --exp_name attn_lstm --learning_rate 4e-3 --batch_size 256 --n_epoch 100 --optim adamw --warmup 3 --weight_decay 5e-5 --num_workers 16 --label_smoothing 0.1 --amp False >> logs.txt
+
+3. python3 train.py --mode multimodal --exp_name 201103 --speech_load_weights './logs/speech/vanila_effb4/94_best_1.5341.pth' --text_load_weights './logs/text/attn_lstm/99_best_1.6258.pth' --face_load_weights './logs/face/attn_lstm/61_best_1.8634.pth' --learning_rate 4e-3 --batch_size 128 --n_epoch 100 --optim adamw --warmup 1 --weight_decay 1e-5 --num_workers 16 --coeff 4 --lam 0 --label_smoothing 0.1 --amp False >> logs.txt
+```
+
+## Requirements
+- liborsa
+- moviepy
+- pytorch
+- opencv
+- numpy
+- scipy
+- facenet_pytorch
+- tqdm
+- albumentations
+
+## New ideas
+https://github.com/titu1994/MLSTM-FCN

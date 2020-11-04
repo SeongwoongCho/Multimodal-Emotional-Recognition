@@ -1,5 +1,6 @@
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 
 class Attention(nn.Module):
     """ Applies attention mechanism on the `context` using the `query`.
@@ -90,6 +91,45 @@ class Attention(nn.Module):
 
         return output, attention_weights
 
+class attention_CNNBilstm(nn.Module):
+    def __init__(self,num_classes = 7, input_size = 1024, hidden_size = 512):
+        super(attention_CNNBilstm,self).__init__()
+        self.num_classes = num_classes
+        self.input_size = input_size
+        self.hidden_size = hidden_size
+        
+        self.conv1 = nn.Conv1d(in_channels = input_size,out_channels = 128,kernel_size = 5, stride = 2,padding = 1)
+        self.bn1 = nn.BatchNorm1d(128)
+        self.conv2 = nn.Conv1d(in_channels = 128,out_channels =128, kernel_size = 5, stride = 2,padding = 1)
+        self.bn2 = nn.BatchNorm1d(128)
+        self.conv3 = nn.Conv1d(in_channels = 128,out_channels =256,kernel_size = 3)
+        self.bn3 = nn.BatchNorm1d(256)
+        self.conv4 = nn.Conv1d(in_channels = 256,out_channels =512, kernel_size = 3)
+        self.bn4 = nn.BatchNorm1d(512)
+        
+        self.encoder = nn.LSTM(input_size = 512,hidden_size=hidden_size,num_layers=1,batch_first = True,bidirectional=True)
+        self.attention = Attention(dimensions = 2*hidden_size)
+        self.out = nn.Linear(2*hidden_size,num_classes)
+#        self.dropout = nn.Dropout(0.5)
+    def forward(self,x,extract_feature = False):
+        # x : B, T, F
+        x = x.transpose(1,2)
+        x = F.relu(self.bn1(self.conv1(x)))
+        x = F.relu(self.bn2(self.conv2(x)))
+        x = F.relu(self.bn3(self.conv3(x)))
+        x = F.relu(self.bn4(self.conv4(x)))
+        x = x.transpose(1,2)
+        
+        self.encoder.flatten_parameters()
+        output,hidden = self.encoder(x) ## B,T,F -> B,T,self.hidden_size * 2
+        query = hidden[0].transpose(0,1).reshape(-1,1,2*self.hidden_size) # B,1,2H
+        output, _ = self.attention(query,output)
+        feature = output.squeeze(1) ## B,2H
+#        out = self.dropout(feature)
+        out = self.out(feature)
+        if extract_feature:
+            return out,feature
+        return out
 
 class attention_bilstm(nn.Module):
     def __init__(self,num_classes = 7,input_size = 1024, hidden_size = 512):
@@ -98,16 +138,20 @@ class attention_bilstm(nn.Module):
         self.input_size = input_size
         self.hidden_size = hidden_size
         
+#        self.input_bn = nn.BatchNorm1d(input_size)
         self.encoder = nn.LSTM(input_size = input_size,hidden_size=hidden_size,num_layers=1,batch_first = True,bidirectional=True)
         self.attention = Attention(dimensions = 2*hidden_size)
         self.out = nn.Linear(2*hidden_size,num_classes)
+#        self.dropout = nn.Dropout(0.5)
     def forward(self,x,extract_feature = False):
         # x : B, T, F
+#        x = self.input_bn(x.transpose(1,2)).transpose(1,2)
         self.encoder.flatten_parameters()
         output,hidden = self.encoder(x) ## B,T,F -> B,T,self.hidden_size * 2
         query = hidden[0].transpose(0,1).reshape(-1,1,2*self.hidden_size) # B,1,2H
         output, _ = self.attention(query,output)
         feature = output.squeeze(1) ## B,2H
+#        out = self.dropout(feature)
         out = self.out(feature)
         if extract_feature:
             return out,feature

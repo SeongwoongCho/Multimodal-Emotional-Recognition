@@ -9,7 +9,7 @@ import pandas as pd
 
 emo2label = ['hap','ang','dis','fea','sad','neu','sur']
 
-weight_path = '../src/logs/multimodal/baseline/87_best_1.3893.pth'
+weight_path = '../src/logs/multimodal/attn_cnnbilstm/5_best_1.3403.pth'
 
 test_speech_root_dir = '../features/test/speech'
 test_face_root_dir = '../features/test/video_embedding'
@@ -20,12 +20,14 @@ test_files = [file for file in os.listdir(test_speech_root_dir) if '.npy' in fil
 test_dataset = Dataset(speech_root_dir = test_speech_root_dir, video_root_dir = test_face_root_dir,text_root_dir = test_text_root_dir,file_list = test_files,label_smoothing = 0,is_train=False, is_test=True)
 test_loader=data.DataLoader(dataset=test_dataset,batch_size=512,num_workers=20,shuffle=False)
 
-model = get_speech_model(coeff = 4)
-model = multimodal_model(model)
+#model = get_speech_model(coeff = 4)
+#model = multimodal_model(model,hidden_sizes = [1024,512])
+model = multimodal_model(speech_model_coeff = 4, hidden_sizes = [256,100])
 model.load_state_dict(torch.load(weight_path))
 model.cuda()
 
 model= nn.DataParallel(model)
+model.eval()
 
 Emotions = []
 

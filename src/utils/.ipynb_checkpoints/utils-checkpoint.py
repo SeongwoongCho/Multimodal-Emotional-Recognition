@@ -29,6 +29,27 @@ def mixup_data(x, y, alpha=1.0, use_cuda=True):
     y_a, y_b = y, y[index]
     return mixed_x, y_a, y_b, lam
 
+def mixup_datas(x1,x2,x3, y1,y2,y3, alpha=1.0, use_cuda=True):
+    '''Returns mixed inputs, pairs of targets, and lambda'''
+    if alpha > 0:
+        lam = np.random.beta(alpha, alpha)
+    else:
+        lam = 1
+
+    batch_size = x1.size()[0]
+    if use_cuda:
+        index = torch.randperm(batch_size).cuda()
+    else:
+        index = torch.randperm(batch_size)
+
+    mixed_x1 = lam * x1 + (1 - lam) * x1[index]
+    mixed_x2 = lam * x2 + (1 - lam) * x2[index]
+    mixed_x3 = lam * x3 + (1 - lam) * x3[index]
+    y1_a, y1_b = y1, y1[index]
+    y2_a, y2_b = y2, y2[index]
+    y3_a, y3_b = y3, y3[index]
+    return mixed_x1,mixed_x2,mixed_x3, y1_a, y1_b,y2_a, y2_b,y3_a, y3_b, lam
+
 def to_onehot(label,num_classes=7):
     return np.eye(num_classes)[label]
 
