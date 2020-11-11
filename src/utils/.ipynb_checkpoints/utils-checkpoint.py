@@ -50,6 +50,37 @@ def mixup_datas(x1,x2,x3, y1,y2,y3, alpha=1.0, use_cuda=True):
     y3_a, y3_b = y3, y3[index]
     return mixed_x1,mixed_x2,mixed_x3, y1_a, y1_b,y2_a, y2_b,y3_a, y3_b, lam
 
+def rand_bbox(size, lam):
+    W = size[2]
+    H = size[3]
+    cut_rat = np.sqrt(1. - lam)
+    cut_w = np.int(W * cut_rat)
+    cut_h = np.int(H * cut_rat)
+
+    # uniform
+    cx = np.random.randint(W)
+    cy = np.random.randint(H)
+
+    bbx1 = np.clip(cx - cut_w // 2, 0, W)
+    bby1 = np.clip(cy - cut_h // 2, 0, H)
+    bbx2 = np.clip(cx + cut_w // 2, 0, W)
+    bby2 = np.clip(cy + cut_h // 2, 0, H)
+
+    return bbx1, bby1, bbx2, bby2
+
+def cutmix_data_3d(x,y, beta = 1.0, use_cuda = True):
+    # generate mixed sample
+    # x : B,C,T,H,W
+    lam = np.random.beta(beta, beta)
+    rand_index = torch.randperm(x.size()[0]).cuda()
+    y_a = y
+    y_b = y[rand_index]
+    bbx1, bby1, bbx2, bby2 = rand_bbox(x.size(), lam)
+    x[:, :,:, bbx1:bbx2, bby1:bby2] = x[rand_index, :,:, bbx1:bbx2, bby1:bby2]
+    # adjust lambda to exactly match pixel ratio
+    lam = 1 - ((bbx2 - bbx1) * (bby2 - bby1) / (x.size()[-1] * x.size()[-2]))
+    return x, y_a, y_b, lam
+
 def to_onehot(label,num_classes=7):
     return np.eye(num_classes)[label]
 

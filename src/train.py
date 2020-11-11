@@ -1,25 +1,18 @@
+import os
 import torch
 import torch.nn as nn
-
-from torch.optim import AdamW,SGD
-from torch.utils import data
-
-from utils.utils import *
-from utils.warmup_scheduler import GradualWarmupScheduler
-from models.model import get_speech_model, multimodal_model
-from models.attention import attention_bilstm,attention_CNNBilstm
-from dataloader.dataset import Dataset
-seed_everything(42)
-
 import numpy as np
-import os
-import time
-import csv
-import warnings
 
-# from apex import amp
 from tqdm import tqdm
 from importify import Serializable
+from torch.optim import AdamW,SGD
+from torch.utils import data
+from utils.utils import *
+from utils.warmup_scheduler import GradualWarmupScheduler
+from models.models import *
+from ranger import Ranger
+from dataloader.dataset import Dataset
+seed_everything(42)
 
 class Config(Serializable):
     def __init__(self):
@@ -34,24 +27,26 @@ class Config(Serializable):
         self.learning_rate = 4e-3
         self.batch_size = 32
         self.n_epoch = 100
-        self.optim = 'adamw'
+        self.optim = 'ranger'
         self.weight_decay = 1e-5
         self.num_workers = 16
-        self.warmup = 1
+        self.warmup = 0
         
         ## model parameters
         self.speech_load_weights = 'default'
         self.text_load_weights = 'default'
         self.face_load_weights = 'default'
-        
-        self.coeff = 0
+        self.speech_coeff = 0 ## efficientnet coeff for speech model
+        self.face_coeff = 0 ## efficientnet coeff for face model
         self.freeze_backbone = False
         
         ## other hyper parameters
-        self.mixup_prob = 1.
-        self.mixup_alpha = 0.5
-        self.label_smoothing = 0.1
-        self.lam = 0.5
+        self.mixup_prob = 0.
+        self.mixup_alpha = 0.
+        self.cutmix_prob = 0. ## only possible when mode == face
+        self.cutmix_beta = 0. ## only possible when mode == face
+        self.label_smoothing = 0.
+        self.lam = 0. ## this is for multi-task loss lambda when mode == 'multimodal'
         
         ## training_options
         self.amp = False
@@ -73,13 +68,23 @@ if config.text_load_weights == 'default':
     config.text_load_weights = None
 
 train_speech_root_dir = '../features/train/speech'
-train_face_root_dir = '../features/train/video_embedding'
+train_face_root_dir = '../features/train/video'
 train_text_root_dir = '../features/train/text'
 valid_speech_root_dir = '../features/val/speech'
-valid_face_root_dir = '../features/val/video_embedding'
-valid_text_root_dir = '../features/val/text'
+valid_face_root_dir = '../features/val/video'
+valid_text_root_dir = '../features/val/text' 
 train_files = [file for file in os.listdir(train_speech_root_dir) if '.npy' in file]
 valid_files = [file for file in os.listdir(valid_speech_root_dir) if '.npy' in file]
+
+if not (config.mode == 'speech' or config.mode == 'multimodal'):
+    train_speech_root_dir = None
+    valid_speech_root_dir = None
+if not (config.mode == 'text' or config.mode == 'multimodal'):
+    train_text_root_dir = None
+    valid_text_root_dir = None
+if not (config.mode == 'face' or config.mode == 'multimodal'):
+    train_face_root_dir = None
+    valid_face_root_dir = None
 
 train_dataset = Dataset(speech_root_dir = train_speech_root_dir, video_root_dir = train_face_root_dir, text_root_dir = train_text_root_dir, file_list = train_files,label_smoothing = config.label_smoothing,is_train=True)
 valid_dataset = Dataset(speech_root_dir = valid_speech_root_dir, video_root_dir = valid_face_root_dir,text_root_dir = valid_text_root_dir,file_list = valid_files,label_smoothing = 0,is_train=False)
@@ -87,23 +92,26 @@ train_loader=data.DataLoader(dataset=train_dataset,batch_size=config.batch_size,
 valid_loader=data.DataLoader(dataset=valid_dataset,batch_size=config.batch_size,num_workers=config.num_workers,shuffle=False)
 
 if config.mode == 'speech':
-    model = get_speech_model(coeff = config.coeff, weights = config.speech_load_weights)
+    model = get_speech_model(coeff = config.speech_coeff, weights = config.speech_load_weights)
     model.cuda()
 elif config.mode == 'face':
-    model = attention_CNNBilstm(num_classes = 7, input_size = 512, hidden_size = 256)
+    model = get_face_model(coeff = config.face_coeff, weights = config.face_load_weights)
     model.cuda()
 elif config.mode == 'text':
-    model = attention_CNNBilstm(num_classes = 7, input_size = 200, hidden_size = 100)
+    model = get_text_model(config.text_load_weights, nhead = 4, num_layer = 3)
     model.cuda()
-elif config.mode == 'multimodal':
-    assert config.speech_load_weights is not None
+elif config.mode == 'multimodal':            
+    speech_model = get_speech_model(coeff = config.speech_coeff, weights = config.speech_load_weights)
+    face_model = get_face_model(coeff = config.face_coeff, weights = config.face_load_weights)
+    text_model = get_text_model(config.text_load_weights, nhead = 4, num_layer = 3)
+    model = multimodal_model(speech_model,face_model,text_model)
     if config.freeze_backbone:
-        for param in model.model.parameters():
+        for param in model.speech_model.parameters():
             param.requires_grad = False
-    model = multimodal_model(config.coeff, hidden_sizes = [256,100])
-    model.speech_model.load_state_dict(torch.load(config.speech_load_weights))
-#    model.face_model.load_state_dict(torch.load(config.face_load_weights))
-#    model.text_model.load_state_dict(torch.load(config.text_load_weights))
+        for param in model.face_model.parameters():
+            param.requires_grad = False
+        for param in model.text_model.parameters():
+            param.requires_grad = False
     model.cuda()
     
 if not config.amp:
@@ -113,6 +121,8 @@ if config.optim == 'adamw':
     optimizer = AdamW(model.parameters(),lr=config.learning_rate,weight_decay = config.weight_decay)
 elif config.optim == 'sgd':
     optimizer = SGD(model.parameters(),lr=config.learning_rate,weight_decay = config.weight_decay, momentum = 0.9, nesterov = True)
+elif config.optim == 'ranger':
+    optimizer = Ranger(model.parameters(),lr=config.learning_rate,weight_decay = config.weight_decay,use_gc = True)
 
 if config.amp:
     model, optimizer = amp.initialize(model, optimizer, opt_level="O1")
@@ -232,6 +242,10 @@ if config.mode == 'face':
             
             if np.random.uniform(0,1) < config.mixup_prob:
                 face,face_label_a,face_label_b,lam = mixup_data(face,face_label,config.mixup_alpha)
+                pred = model(face)
+                loss = criterion(pred,face_label_a*lam + face_label_b*(1-lam))
+            elif np.random.uniform(0,1) < config.cutmix_prob:
+                face,face_label_a,face_label_b,lam = cutmix_data_3d(face,face_label,config.cutmix_beta)
                 pred = model(face)
                 loss = criterion(pred,face_label_a*lam + face_label_b*(1-lam))
             else:

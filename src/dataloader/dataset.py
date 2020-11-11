@@ -1,6 +1,6 @@
+from torch.utils import data
 from utils.utils import *
 from utils.SpecAugment import spec_augment_pytorch
-from torch.utils import data
 from .transform import get_speech_transform, get_face_transform, get_text_transform
 
 seed_everything(42)
@@ -43,7 +43,6 @@ class Dataset(data.Dataset):
         self.face_transform = get_face_transform(is_train)
         self.text_transform = get_text_transform(is_train)
         
-        self.video_stride = 4
     def __len__(self):
         return len(self.file_list)
     def __getitem__(self,idx):
@@ -67,10 +66,13 @@ class Dataset(data.Dataset):
                 yS = spec_augment_pytorch.spec_augment(mel_spectrogram = yS, time_warping_para=80, frequency_masking_para=27,
                      time_masking_para=50, frequency_mask_num=3, time_mask_num=4)
             data['speech'] = yS
+        
         if self.video_root_dir is not None:
-            face = np.load(os.path.join(self.video_root_dir,fileName)).astype('float32')[::self.video_stride,:,np.newaxis] ## T, F,1 
-            face = self.face_transform(image = face)['image'][...,0] 
-            data['face'] = torch.from_numpy(face) ##T,F
+            face = np.load(os.path.join(self.video_root_dir,fileName),mmap_mode = 'r') ## T,C,H,W
+            face = face.transpose(1,0,2,3)
+            
+            face = self.face_transform(face)
+            data['face'] = torch.from_numpy(face.astype('float32')) ##T,F
         
         if self.text_root_dir is not None:
             text_fileName = fileName.split('-')[0]+'.npz'
