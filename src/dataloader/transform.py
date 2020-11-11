@@ -1,6 +1,8 @@
 import albumentations
 import numpy as np
 import cv2
+from .auto_augment import AutoAugment
+from PIL import Image
 
 def get_speech_transform(is_train):
     ## border mode 0 : constant padding, border mode 4 : repeats
@@ -19,7 +21,26 @@ def get_speech_transform(is_train):
                 albumentations.CenterCrop(height = 128, width = 400),
             ]
         )
-    return transform
+    return transform    
+
+def get_face_transform(is_train=False):
+    aa = AutoAugment()
+    def face_transform(x):
+        x = drop_endframes(x,n_frames = 10)
+        x = sample_frames(x,n_frames = 16, is_train=is_train).astype('uint8')
+        if is_train:
+            for frame in range(x.shape[1]):
+                img = Image.fromarray(np.rollaxis(x[:,frame,:,:],0,3)) # C,H,W
+                img = aa(img)
+                img = np.rollaxis(np.array(img),-1,0)
+                x[:,frame,:,:] = img
+        x = normalize(x)
+        return x
+    return face_transform
+
+def get_text_transform(is_train):
+    return albumentations.PadIfNeeded(min_height = 38, min_width = 200,border_mode = 0)
+
 
 def sample_frames(x, n_frames = 32,is_train = False):
     # x : C,T,H,W
@@ -60,17 +81,3 @@ def video_resize(x,shape):
     y = np.array(y) # T,H1,W1,C
     y = np.rollaxis(y,-1,0)
     return y
-    
-def get_face_transform(is_train=False):
-    def face_transform(x):
-        x = drop_endframes(x,n_frames = 10)
-        x = sample_frames(x,n_frames = 16, is_train=is_train)
-#        x = video_resize(x,(112,112))
-        if is_train:
-            x = RandomFlip(x)
-        x = normalize(x)
-        return x
-    return face_transform
-
-def get_text_transform(is_train):
-    return albumentations.PadIfNeeded(min_height = 38, min_width = 200,border_mode = 0)

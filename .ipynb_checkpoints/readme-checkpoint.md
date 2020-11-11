@@ -57,7 +57,7 @@
 # How to start
 
 ```
-$ python3 preprocess.py
+$ python preprocess.py
 
 $ python train.py --mode speech --exp_name AttnCNN-B4 --learning_rate 4e-3 --batch_size 256 --n_epoch 100 --optim ranger --warmup 0 --weight_decay 5e-5 --num_workers 16 --speech_coeff 4 --mixup_prob 1 --mixup_alpha 1 --label_smoothing 0.1 --amp True >> logs.txt
 
@@ -65,7 +65,7 @@ $ python train.py --mode face --exp_name CLSTM-B0 --learning_rate 4e-3 --batch_s
 
 $ python train.py --mode text --exp_name transformer-3_4 --learning_rate 4e-3 --batch_size 128 --n_epoch 20 --optim ranger --warmup 0 --weight_decay 5e-5 --num_workers 16 --face_coeff 0 --cutmix_prob 1 --cutmix_beta 1 --label_smoothing 0.1 --amp True >> logs.txt
 
-$ python3 train.py --mode multimodal --exp_name 201111 --speech_load_weights {path1} --text_load_weights {path} --face_load_weights {path3} --learning_rate 4e-3 --batch_size 32 --n_epoch 3 --optim sgd --warmup 0 --weight_decay 5e-5 --num_workers 16 --speech_coeff 4 --face_coeff 0 --lam 0 --label_smoothing 0.1 --amp True >> logs.txt
+$ python train.py --mode multimodal --exp_name 201111 --speech_load_weights {path1} --text_load_weights {path} --face_load_weights {path3} --learning_rate 4e-3 --batch_size 32 --n_epoch 3 --optim sgd --warmup 0 --weight_decay 5e-5 --num_workers 16 --speech_coeff 4 --face_coeff 0 --lam 0 --label_smoothing 0.1 --amp True >> logs.txt
 ```
 
 # Preprocessing
@@ -83,7 +83,7 @@ Text -> word2vec embedding of the each word of a sentence (This is given on the 
     - Mixup
 - Facemodel
     - RandomFrameSelection
-    - RandomFlip
+    - AutoAugment(adjust different AutoAugment for the different video frame)
     - cutmix3d
 - Textmodel
     - Word-level Mixup (https://arxiv.org/pdf/1905.08941.pdf)
@@ -97,9 +97,10 @@ Text -> word2vec embedding of the each word of a sentence (This is given on the 
     - Vanilla-Transformer-Encoder(with small version)
 
 # Requirements
+- python == 3.6
+- pytorch == 1.5.1
 - librosa
 - moviepy
-- pytorch
 - opencv
 - numpy
 - scipy
@@ -111,7 +112,8 @@ Text -> word2vec embedding of the each word of a sentence (This is given on the 
 - https://github.com/lessw2020/Ranger-Deep-Learning-Optimizer
 
 # TODO
+- AutoAugment For face 
 
 # Have Tried
-- r2plus1d for face model -> too slow / low performance
+- r2plus1d for face model -> too slow training / convergence.
 - Naive-Attentioned-LSTM (not FAN attention) for text model -> Bad! 
