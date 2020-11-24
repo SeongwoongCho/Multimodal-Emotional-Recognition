@@ -3,7 +3,7 @@ from utils.utils import *
 from utils.SpecAugment import spec_augment_pytorch
 from .transform import get_speech_transform, get_face_transform, get_text_transform
 
-seed_everything(42)
+seed_everything(1234)
 label2emo={'hap':0,'ang':1,'dis':2,'fea':3,'sad':4,'neu':5,'sur':6}
 
 def parse_label(fileName,smooth_weight):
@@ -30,7 +30,7 @@ def parse_label(fileName,smooth_weight):
     return inte_label, face_label, speech_label
     
 class Dataset(data.Dataset):
-    def __init__(self,speech_root_dir= None,video_root_dir= None,text_root_dir = None, file_list= None, label_smoothing = 0,is_train=True,is_test=False):
+    def __init__(self,speech_root_dir= None,video_root_dir= None,text_root_dir = None, file_list= None, label_smoothing = 0,is_train=True,is_test=False,n_frames = 16):
         self.file_list = file_list
         self.speech_root_dir = speech_root_dir
         self.text_root_dir = text_root_dir
@@ -40,7 +40,7 @@ class Dataset(data.Dataset):
         self.is_train=is_train
         self.is_test = is_test
         self.speech_transform = get_speech_transform(is_train)
-        self.face_transform = get_face_transform(is_train)
+        self.face_transform = get_face_transform(is_train,n_frames)
         self.text_transform = get_text_transform(is_train)
         
     def __len__(self):

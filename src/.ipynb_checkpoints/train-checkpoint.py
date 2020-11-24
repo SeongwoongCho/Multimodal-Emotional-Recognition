@@ -12,7 +12,8 @@ from utils.warmup_scheduler import GradualWarmupScheduler
 from models.models import *
 from ranger import Ranger
 from dataloader.dataset import Dataset
-seed_everything(42)
+from typing import Union
+seed_everything(1234)
 
 class Config(Serializable):
     def __init__(self):
@@ -37,7 +38,7 @@ class Config(Serializable):
         self.text_load_weights = 'default'
         self.face_load_weights = 'default'
         self.speech_coeff = 0 ## efficientnet coeff for speech model
-        self.face_coeff = 0 ## efficientnet coeff for face model
+        self.face_coeff = 'M' ## coeff for face model
         self.freeze_backbone = False
         
         ## other hyper parameters
@@ -47,6 +48,9 @@ class Config(Serializable):
         self.cutmix_beta = 0. ## only possible when mode == face
         self.label_smoothing = 0.
         self.lam = 0. ## this is for multi-task loss lambda when mode == 'multimodal'
+        
+        ## evaluation step
+        self.eval_step = -1
         
         ## training_options
         self.amp = False
@@ -86,8 +90,8 @@ if not (config.mode == 'face' or config.mode == 'multimodal'):
     train_face_root_dir = None
     valid_face_root_dir = None
 
-train_dataset = Dataset(speech_root_dir = train_speech_root_dir, video_root_dir = train_face_root_dir, text_root_dir = train_text_root_dir, file_list = train_files,label_smoothing = config.label_smoothing,is_train=True)
-valid_dataset = Dataset(speech_root_dir = valid_speech_root_dir, video_root_dir = valid_face_root_dir,text_root_dir = valid_text_root_dir,file_list = valid_files,label_smoothing = 0,is_train=False)
+train_dataset = Dataset(speech_root_dir = train_speech_root_dir, video_root_dir = train_face_root_dir, text_root_dir = train_text_root_dir, file_list = train_files,label_smoothing = config.label_smoothing,is_train=True,n_frames = 16)
+valid_dataset = Dataset(speech_root_dir = valid_speech_root_dir, video_root_dir = valid_face_root_dir,text_root_dir = valid_text_root_dir,file_list = valid_files,label_smoothing = 0,is_train=False,n_frames = 16)
 train_loader=data.DataLoader(dataset=train_dataset,batch_size=config.batch_size,num_workers=config.num_workers,shuffle=True)
 valid_loader=data.DataLoader(dataset=valid_dataset,batch_size=config.batch_size,num_workers=config.num_workers,shuffle=False)
 
@@ -96,14 +100,15 @@ if config.mode == 'speech':
     model.cuda()
 elif config.mode == 'face':
     model = get_face_model(coeff = config.face_coeff, weights = config.face_load_weights)
+    # model.backbone_model.load_state_dict(torch.load('./models/tunit_ffhq_cnt_encoder.pt',map_location = torch.device('cpu')))
     model.cuda()
 elif config.mode == 'text':
-    model = get_text_model(config.text_load_weights, nhead = 4, num_layer = 3)
+    model = get_text_model(config.text_load_weights, nhead = 8, num_layers = 12)
     model.cuda()
 elif config.mode == 'multimodal':            
     speech_model = get_speech_model(coeff = config.speech_coeff, weights = config.speech_load_weights)
     face_model = get_face_model(coeff = config.face_coeff, weights = config.face_load_weights)
-    text_model = get_text_model(config.text_load_weights, nhead = 4, num_layer = 3)
+    text_model = get_text_model(config.text_load_weights, nhead = 8, num_layers = 12)
     model = multimodal_model(speech_model,face_model,text_model)
     if config.freeze_backbone:
         for param in model.speech_model.parameters():
@@ -127,11 +132,18 @@ elif config.optim == 'ranger':
 if config.amp:
     model, optimizer = amp.initialize(model, optimizer, opt_level="O1")
     model= nn.DataParallel(model)
-scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer,T_max = config.n_epoch*len(train_loader))
+
+if config.mode == 'multimodal':
+    scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size = config.n_epoch//2, gamma=0.1, last_epoch=-1)
+else:
+    scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer,T_max = config.n_epoch*len(train_loader))
 if config.warmup:
     scheduler = GradualWarmupScheduler(optimizer, multiplier = 1, total_epoch = config.warmup*len(train_loader), after_scheduler = scheduler)
     
 criterion = cross_entropy()
+
+if config.eval_step == -1:
+    config.eval_step = len(train_loader)
 
 if config.mode == 'multimodal':
     best_acc=np.inf
@@ -147,6 +159,7 @@ if config.mode == 'multimodal':
         
         progress_bar = tqdm(train_loader)
         for idx,data in enumerate(progress_bar):
+            model.train()
             speech = data['speech'].cuda()
             face = data['face'].cuda()
             text = data['text'].cuda()
@@ -184,49 +197,52 @@ if config.mode == 'multimodal':
             train_face_loss += face_loss.item()/len(train_loader)
             train_speech_loss += speech_loss.item()/len(train_loader)
             
-            scheduler.step(step)
+            # scheduler.step(step)
             step +=1
             
             progress_bar.set_description(
-                'Step: {}. LR : {:.5f}. Epoch: {}/{}. Iteration: {}/{}. inte_loss: {:.5f} speech_loss: {:.5f} face_loss: {:.5f} Total loss: {:.5f}'.format(step, optimizer.param_groups[0]['lr'], epoch, config.n_epoch, idx + 1, len(train_loader), inte_loss.item(), speech_loss.item(), face_loss.item(), loss.item()))
+                'Step: {}. LR : {:.5f}. Epoch: {}/{}. Iteration: {}/{}. inte_loss: {:.5f} speech_loss: {:.5f} face_loss: {:.5f} '.format(step, optimizer.param_groups[0]['lr'], epoch, config.n_epoch, idx + 1, len(train_loader), inte_loss.item(), speech_loss.item(), face_loss.item()))
         
-        valid_loss=0
-        valid_inte_loss = 0
-        valid_face_loss = 0
-        valid_speech_loss = 0
+            if step%config.eval_step == 0:
+                valid_loss=0
+                valid_inte_loss = 0
+                valid_face_loss = 0
+                valid_speech_loss = 0
+
+                valid_acc=0
+                model.eval()
+                for idx,data in enumerate(tqdm(valid_loader)):
+                    speech = data['speech'].cuda()
+                    face = data['face'].cuda()
+                    text = data['text'].cuda()
+
+                    speech_label = data['speech_label'].cuda()
+                    face_label = data['face_label'].cuda()
+                    inte_label = data['inte_label'].cuda()
+
+                    with torch.no_grad():
+                        inte_pred, speech_pred, face_pred, _ = model(speech,face,text)
+                        inte_loss = criterion(inte_pred, inte_label)
+                        speech_loss = criterion(speech_pred, speech_label)
+                        face_loss = criterion(face_pred, face_label)
+
+                        loss = inte_loss + config.lam *(speech_loss + face_loss)/2
+
+                    valid_loss+=loss.item()/len(valid_loader)
+                    valid_inte_loss += inte_loss.item()/len(valid_loader)
+                    valid_face_loss += face_loss.item()/len(valid_loader)
+                    valid_speech_loss += speech_loss.item()/len(valid_loader)
+
+                    inte_pred=inte_pred.detach().max(1)[1]
+                    inte_label = inte_label.detach().max(1)[1]
+                    acc = inte_pred.eq(inte_label.view_as(inte_pred)).sum().item() / len(inte_pred)
+                    valid_acc+=acc/len(valid_loader)
+
+                torch.save(model.module.state_dict(),os.path.join(save_path,'%d_%d_best_%.4f.pth'%(step,epoch,valid_inte_loss)))
+                print("Epoch [%d]/[%d] train_inte_loss: %.6f train_speech_loss: %.6f train_face_loss: %.6f valid_inte_loss: %.6f valid_speech_loss: %.6f valid_face_loss: %.6f valid_acc: %.6f"%(epoch,config.n_epoch,train_inte_loss, train_speech_loss, train_face_loss, valid_inte_loss, valid_speech_loss, valid_face_loss, valid_acc))
+
+        scheduler.step()
         
-        valid_acc=0
-        model.eval()
-        for idx,data in enumerate(tqdm(valid_loader)):
-            speech = data['speech'].cuda()
-            face = data['face'].cuda()
-            text = data['text'].cuda()
-            
-            speech_label = data['speech_label'].cuda()
-            face_label = data['face_label'].cuda()
-            inte_label = data['inte_label'].cuda()
-            
-            with torch.no_grad():
-                inte_pred, speech_pred, face_pred, _ = model(speech,face,text)
-                inte_loss = criterion(inte_pred, inte_label)
-                speech_loss = criterion(speech_pred, speech_label)
-                face_loss = criterion(face_pred, face_label)
-
-                loss = inte_loss + config.lam *(speech_loss + face_loss)/2
-            
-            valid_loss+=loss.item()/len(valid_loader)
-            valid_inte_loss += inte_loss.item()/len(valid_loader)
-            valid_face_loss += face_loss.item()/len(valid_loader)
-            valid_speech_loss += speech_loss.item()/len(valid_loader)
-            
-            inte_pred=inte_pred.detach().max(1)[1]
-            inte_label = inte_label.detach().max(1)[1]
-            acc = inte_pred.eq(inte_label.view_as(inte_pred)).sum().item() / len(inte_pred)
-            valid_acc+=acc/len(valid_loader)
-
-        torch.save(model.module.state_dict(),os.path.join(save_path,'%d_best_%.4f.pth'%(epoch,valid_inte_loss)))
-        print("Epoch [%d]/[%d] train_loss: %.6f train_inte_loss: %.6f train_speech_loss: %.6f train_face_loss: %.6f valid_loss: %.6f valid_inte_loss: %.6f valid_speech_loss: %.6f valid_face_loss: %.6f valid_acc: %.6f"%(epoch,config.n_epoch,train_loss,train_inte_loss, train_speech_loss, train_face_loss, valid_loss,valid_inte_loss, valid_speech_loss, valid_face_loss, valid_acc))
-
 if config.mode == 'face':
     best_acc=np.inf
     step = 0
@@ -239,7 +255,6 @@ if config.mode == 'face':
         for idx,data in enumerate(progress_bar):
             face = data['face'].cuda()
             face_label = data['face_label'].cuda()
-            
             if np.random.uniform(0,1) < config.mixup_prob:
                 face,face_label_a,face_label_b,lam = mixup_data(face,face_label,config.mixup_alpha)
                 pred = model(face)
@@ -258,7 +273,6 @@ if config.mode == 'face':
                 loss.backward()
             optimizer.step()
             optimizer.zero_grad()
-            
             train_loss+=loss.item()/len(train_loader)
             scheduler.step(step)
             step +=1

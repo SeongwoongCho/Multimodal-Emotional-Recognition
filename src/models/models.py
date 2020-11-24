@@ -1,8 +1,10 @@
 import torch
 import torch.nn as nn
-from .utils import FrameAttentionModule
+from .utils import FrameAttentionModule, ContentEncoder
 from efficientnet_pytorch import EfficientNet
 from efficientnet_pytorch.utils import Conv2dStaticSamePadding
+from facenet_pytorch import InceptionResnetV1
+from .x3d import generate_model
 
 n_classes = 7
 class multimodal_model(nn.Module):
@@ -36,8 +38,10 @@ def get_speech_model(coeff = 0, weights = None):
     return model
 
 def get_face_model(coeff = 0,weights = None):
-#    model = r2plus1d_18(pretrained=True)
-    model = CLSTM(coeff = coeff)
+    if coeff in ['S','M','XL']:
+        model = generate_model(coeff,n_classes = n_classes, base_bn_splits = 2)
+    if coeff in ['0','1','2','3','4','5','6','7',0,1,2,3,4,5,6,7]:
+        model = CLSTM(coeff = int(coeff))
     if weights:
         model.load_state_dict(torch.load(weights))
     return model
@@ -45,7 +49,9 @@ def get_face_model(coeff = 0,weights = None):
 class CLSTM(nn.Module):
     def __init__(self, coeff = 0):
         super(CLSTM,self).__init__()
+#        self.backbone_model = InceptionResnetV1(pretrained='vggface2')
         self.backbone_model = EfficientNet.from_pretrained(model_name='efficientnet-b%d'%coeff)
+#        self.backbone_model = ContentEncoder(64, 3, 2, 'in', 'relu', 'reflect')
         self.out = AttnBiLSTM(num_classes = n_classes,
                                     input_size = self.backbone_model._fc.in_features,
                                     hidden_size = self.backbone_model._fc.in_features//4)
@@ -81,8 +87,9 @@ class AttnBiLSTM(nn.Module):
     def __init__(self,num_classes = 7,input_size = 1024, hidden_size = 512):
         super(AttnBiLSTM,self).__init__()
         
-        attn_mode = 'relation'
-        
+#        attn_mode = 'relation'
+        attn_mode = 'self'
+
         self.num_classes = num_classes
         self.input_size = input_size
         self.hidden_size = hidden_size
@@ -108,8 +115,8 @@ class TransformerClassifier(nn.Module):
     def __init__(self,nhead,num_layers):
         super(TransformerClassifier,self).__init__()
         self.encoder_layer = nn.TransformerEncoderLayer(d_model=200, nhead=nhead)
-        self.transformer_encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
-        self.out = nn.Linear(200,num_classes)
+        self.transformer_encoder = nn.TransformerEncoder(self.encoder_layer, num_layers=num_layers)
+        self.out = nn.Linear(200,n_classes)
         self.feature_dim = 200
     def forward(self,x,extract_feature = False):
         feature = self.transformer_encoder(x)

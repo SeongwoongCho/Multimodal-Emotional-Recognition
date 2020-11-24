@@ -71,6 +71,7 @@ class FastMTCNN(object):
 train_config = CONFIG()
 val_config = CONFIG()
 test_config = CONFIG()
+test3_config = CONFIG()
 
 train_config.FILE_DIR = '../qia2020/train/'
 train_config.SAVE_DIR = '../features/train/'
@@ -78,6 +79,8 @@ val_config.FILE_DIR = '../qia2020/val/'
 val_config.SAVE_DIR = '../features/val/'
 test_config.FILE_DIR = '../qia2020/test/'
 test_config.SAVE_DIR = '../features/test/'
+test3_config.FILE_DIR = '../2020-3/test3/'
+test3_config.SAVE_DIR = '../features/test3/'
 
 fast_mtcnn = FastMTCNN(
     stride=4,
@@ -184,6 +187,7 @@ def process_text_embedding(config):
         shutil.copy(os.path.join(config.FILE_DIR, file), os.path.join(config.SAVE_DIR + 'text/',file))
     
 if __name__ == '__main__':
+    """
     print("..processing train data")
     process(train_config)
 
@@ -210,3 +214,10 @@ if __name__ == '__main__':
 
     print(".. text processing test data")
     process_text_embedding(test_config)
+    """
+    print("..processing test3 data")
+    process(test3_config)
+    print(".. feature processing test data")
+    process_feature_embedding(test3_config)
+    print("..processing test3 data")
+    process_text_embedding(test3_config)
