@@ -1,5 +1,27 @@
 # Multimodal-Emotional-Recognition
 
+# [대회 제출 검증용] How to reproduce leaderboard result
+
+```
+1. 라이브러리들을 설치한다.(학습이 아닌 inference를 위한 라이브러리임) 전부 pip install (library)로 설치가능합니다.
+    - torch == 1.7.0
+    - torchvision == 0.8.1
+    - librosa
+    - moviepy
+    - opencv-python
+    - pandas
+    - ttach
+    - numpy
+    - facenet-pytorch
+    - efficientnet_pytorch
+2. test1, test2 데이터 셋을 qia2020/test/ 폴더에 옮긴다. 즉, qia2020/test/ 폴더에 .npz, .mp4 파일들이 위치해있다.
+3. test3 데이터 셋은 2020-3/test3/ 폴더에 있다.즉, 2020-3/test3/ 폴더에 .npz, .mp4 파일들이 위치해있다.
+4. python preprocess.py 를 실행한다
+5. make_submission.py를 실행했을 때 나오는 3개의 csv파일중 test2_submission.csv, test3_submission.csv 가 각각 phase2,3의 리더보드를 복원함
+6. make_submission.py의 64~71, 124-130, 174-181 번째 줄을 주석처리한후 make_submission.py를 실행한다. 이 때 나오는 3개의 csv파일중 test1_submission.csv 가 각각 phase1의 리더보드를 복원함
+
+```
+
 # Dataset
 - QIA2020/MERC2020
     - video / word2vec embedding of sentence is given!
@@ -37,9 +59,7 @@
 │   ├── train/
 │   ├── val/ 
 │   └── test/
-├── merc2020/
-│   ├── test1/
-│   ├── test2/ 
+├── 2020-3/
 │   └── test3/
 └── src/
     ├── preprocess.py
@@ -114,6 +134,22 @@ python train.py --mode multimodal --exp_name mixup-lam_2-seed1234-bigger-models 
 --weight_decay 5e-5 --num_workers 16 --speech_coeff 7 --face_coeff 1 \
 --mixup_prob 1 --mixup_alpha 1 --lam 2 --label_smoothing 0.1 --amp False \
 >> ./logs/logs.txt
+
+python train.py --mode speech --exp_name AttnCNN-B4-newnewseed --learning_rate 4e-3 --batch_size 256 --n_epoch 100 \
+--optim ranger --warmup 0 --weight_decay 5e-5 --num_workers 16 --speech_coeff 4 --mixup_prob 1 --mixup_alpha 1 \
+--label_smoothing 0.1 --amp True >> ./logs/logs.txt && python train.py --mode face --exp_name CLSTM-B0-latest-newnewseed --learning_rate 4e-3 --batch_size 32 --n_epoch 20 \
+--optim ranger --warmup 0 --weight_decay 5e-5 --num_workers 16 --face_coeff 0 --cutmix_prob 1 --cutmix_beta 1 \
+--label_smoothing 0.1 --amp True >> ./logs/logs.txt && python train.py --mode text --exp_name transformer_12_8-newnewseed --learning_rate 3e-4 --batch_size 128 \
+--n_epoch 100 --optim ranger --warmup 0 --weight_decay 5e-5 --num_workers 16 \
+--label_smoothing 0.1 --amp False >> ./logs/logs.txt && python train.py --mode multimodal --exp_name mixup-lam_2-latest-newnewseed \
+--speech_load_weights ./logs/speech/AttnCNN-B4-newseed/52_best_1.5434.pth \
+--text_load_weights ./logs/text/transformer_12_8-newseed/27_best_1.5660.pth \
+--face_load_weights ./logs/face/CLSTM-B0-latest-newseed/14_best_1.6082.pth \
+--learning_rate 3e-4 --batch_size 16 --n_epoch 20 --optim sgd --warmup 0 \
+--weight_decay 5e-5 --num_workers 16 --speech_coeff 4 --face_coeff 0 \
+--mixup_prob 1 --mixup_alpha 1 --lam 2 --label_smoothing 0.1 --amp False \
+>> ./logs/logs.txt
+
 ```
 
 # Preprocessing
@@ -186,18 +222,3 @@ python train.py --mode multimodal --exp_name mixup-lam_2-seed1234-bigger-models 
 # TODO 
 - word mixup! 
 - VGGISH for audio embedding
-
-python train.py --mode speech --exp_name AttnCNN-B4-newnewseed --learning_rate 4e-3 --batch_size 256 --n_epoch 100 \
---optim ranger --warmup 0 --weight_decay 5e-5 --num_workers 16 --speech_coeff 4 --mixup_prob 1 --mixup_alpha 1 \
---label_smoothing 0.1 --amp True >> ./logs/logs.txt && python train.py --mode face --exp_name CLSTM-B0-latest-newnewseed --learning_rate 4e-3 --batch_size 32 --n_epoch 20 \
---optim ranger --warmup 0 --weight_decay 5e-5 --num_workers 16 --face_coeff 0 --cutmix_prob 1 --cutmix_beta 1 \
---label_smoothing 0.1 --amp True >> ./logs/logs.txt && python train.py --mode text --exp_name transformer_12_8-newnewseed --learning_rate 3e-4 --batch_size 128 \
---n_epoch 100 --optim ranger --warmup 0 --weight_decay 5e-5 --num_workers 16 \
---label_smoothing 0.1 --amp False >> ./logs/logs.txt && python train.py --mode multimodal --exp_name mixup-lam_2-latest-newnewseed \
---speech_load_weights ./logs/speech/AttnCNN-B4-newseed/52_best_1.5434.pth \
---text_load_weights ./logs/text/transformer_12_8-newseed/27_best_1.5660.pth \
---face_load_weights ./logs/face/CLSTM-B0-latest-newseed/14_best_1.6082.pth \
---learning_rate 3e-4 --batch_size 16 --n_epoch 20 --optim sgd --warmup 0 \
---weight_decay 5e-5 --num_workers 16 --speech_coeff 4 --face_coeff 0 \
---mixup_prob 1 --mixup_alpha 1 --lam 2 --label_smoothing 0.1 --amp False \
->> ./logs/logs.txt

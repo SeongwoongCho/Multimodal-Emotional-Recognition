@@ -194,8 +194,7 @@ if __name__ == '__main__':
     print("..processing valid data")
     process(val_config)
 
-    print("..processing test data")
-    process(test_config)
+
 
     print(".. feature processing train data")
     process_feature_embedding(train_config)
@@ -203,8 +202,6 @@ if __name__ == '__main__':
     print(".. feature processing valid data")
     process_feature_embedding(val_config)
 
-    print(".. feature processing test data")
-    process_feature_embedding(test_config)
     
     print(".. text processing train data")
     process_text_embedding(train_config)
@@ -212,9 +209,15 @@ if __name__ == '__main__':
     print(".. text processing valid data")
     process_text_embedding(val_config)
 
+
+    """
+    print("..processing test data")
+    process(test_config)
+    print(".. feature processing test data")
+    process_feature_embedding(test_config)
     print(".. text processing test data")
     process_text_embedding(test_config)
-    """
+    
     print("..processing test3 data")
     process(test3_config)
     print(".. feature processing test data")
