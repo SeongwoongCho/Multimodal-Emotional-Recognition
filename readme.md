@@ -1,5 +1,10 @@
 # Multimodal-Emotional-Recognition
 
+❗Features❗
+- Frame Attention Network(FAN) pytorch Implementation
+- SpecAug pytorch implementation
+- cutmix 3d for video implementation
+
 # [대회 제출 검증용] How to reproduce leaderboard result
 
 ```
